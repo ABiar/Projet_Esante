@@ -224,7 +224,7 @@ public class GUI_home {
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(157, 232, 194, 19);
-		panel_4.add(textField_2);
+		panel_4.add(textField_2); /** Bonjour */
 		
 		JLabel lblMotDePasse = new JLabel("MOT DE PASSE");
 		lblMotDePasse.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
