@@ -83,7 +83,7 @@ public class GUI_home {
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-//		lblNewLabel_2.setIcon(new ImageIcon("D:\\Users\\elian\\eclipse\\handle\\img\\icons8_search_32px.png"));
+		lblNewLabel_2.setIcon(new ImageIcon("D:\\Users\\elian\\eclipse\\handle\\img\\icons8_search_32px.png"));
 		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\elian\\git\\Handle\\handle\\img\\icons8_search_32px.png"));
 		lblNewLabel_2.setBounds(848, 0, 157, 97);
 		panel_1.add(lblNewLabel_2);
@@ -226,7 +226,7 @@ public class GUI_home {
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(157, 232, 194, 19);
-		panel_4.add(textField_2); /** Bonjour */
+		panel_4.add(textField_2);
 		
 		JLabel lblMotDePasse = new JLabel("MOT DE PASSE");
 		lblMotDePasse.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
@@ -341,5 +341,9 @@ public class GUI_home {
 			}
 		});
 	}
+
+
+
+
 }
  

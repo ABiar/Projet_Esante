@@ -1,6 +1,7 @@
 package com.ecetech.b2.handle.gui;
 
 import java.awt.EventQueue;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -24,6 +25,8 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JPasswordField;
+
+import com.ecetech.b2.handle.gui.GUI_home;
 
 public class connexion {
 
@@ -111,6 +114,9 @@ public class connexion {
 					if (a.equals("elian") && b.equals("1234"))
 					{
 						JOptionPane.showMessageDialog(null, "Connexion reussi");
+						connexion.setVisible(false);
+						GUI_home fen = new GUI_home();
+						fen.setVisible(true);
 					}
 					else
 					{
@@ -119,6 +125,8 @@ public class connexion {
 					
 				}
 			}
+
+
 		});
 	}
 
