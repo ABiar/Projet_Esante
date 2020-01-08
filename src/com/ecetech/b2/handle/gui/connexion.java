@@ -100,6 +100,8 @@ public class connexion {
 		passwordField.setBounds(184, 271, 210, 34);
 		panel.add(passwordField);
 		
+		/*test commit */
+		
 		btnSignIn.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed (ActionEvent e) {
