@@ -22,7 +22,7 @@ import java.awt.CardLayout;
 
 public class GUI_home {
 
-	private JFrame frame;
+	public JFrame framebis;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -42,7 +42,7 @@ public class GUI_home {
 			public void run() {
 				try {
 					GUI_home window = new GUI_home();
-					window.frame.setVisible(true);
+					window.framebis.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -61,13 +61,13 @@ public class GUI_home {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 1277, 682);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(false);
+		framebis = new JFrame();
+		framebis.setBounds(100, 100, 1277, 682);
+		framebis.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		framebis.setResizable(false);
 		
 		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.CENTER);
+		framebis.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
