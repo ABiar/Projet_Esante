@@ -200,6 +200,10 @@ public class GUI_home {
 		lblExamen_1.setBounds(440, 36, 185, 47);
 		panel_5.add(lblExamen_1);
 		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBounds(0, 0, 1005, 566);
+		panel_5.add(panel_6);
+		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(102, 255, 153));
 		panel_4.setForeground(new Color(153, 255, 153));
@@ -341,9 +345,5 @@ public class GUI_home {
 			}
 		});
 	}
-
-
-
-
 }
  
