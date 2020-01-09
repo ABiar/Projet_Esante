@@ -22,7 +22,7 @@ import java.awt.CardLayout;
 
 public class GUI_home {
 
-	private JFrame frame;
+	public JFrame framebis;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -36,13 +36,13 @@ public class GUI_home {
 	 * Launch the application.
 	 */
 	
-	/* test commentaire */
+	/* test commentaire  test*/
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					GUI_home window = new GUI_home();
-					window.frame.setVisible(true);
+					window.framebis.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -61,13 +61,13 @@ public class GUI_home {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 1277, 682);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(false);
+		framebis = new JFrame();
+		framebis.setBounds(100, 100, 1277, 682);
+		framebis.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		framebis.setResizable(false);
 		
 		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.CENTER);
+		framebis.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
@@ -83,7 +83,7 @@ public class GUI_home {
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-//		lblNewLabel_2.setIcon(new ImageIcon("D:\\Users\\elian\\eclipse\\handle\\img\\icons8_search_32px.png"));
+		lblNewLabel_2.setIcon(new ImageIcon("D:\\Users\\elian\\eclipse\\handle\\img\\icons8_search_32px.png"));
 		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\elian\\git\\Handle\\handle\\img\\icons8_search_32px.png"));
 		lblNewLabel_2.setBounds(848, 0, 157, 97);
 		panel_1.add(lblNewLabel_2);
@@ -199,6 +199,14 @@ public class GUI_home {
 		lblExamen_1.setFont(new Font("Tahoma", Font.BOLD, 40));
 		lblExamen_1.setBounds(440, 36, 185, 47);
 		panel_5.add(lblExamen_1);
+		
+		JPanel panel_7 = new JPanel();
+		panel_7.setBounds(0, 0, 1005, 566);
+		layeredPane.add(panel_7);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBounds(0, 0, 1005, 566);
+		layeredPane.add(panel_6);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(102, 255, 153));
