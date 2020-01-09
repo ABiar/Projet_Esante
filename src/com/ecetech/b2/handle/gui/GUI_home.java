@@ -36,7 +36,7 @@ public class GUI_home {
 	 * Launch the application.
 	 */
 	
-	/* test commentaire */
+	/* test commentaire  test*/
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
