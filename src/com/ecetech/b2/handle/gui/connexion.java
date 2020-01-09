@@ -36,7 +36,7 @@ public class connexion {
 	 * Launch the application.
 	 * @throws IOException 
 	 */
-	
+	/** test*/
 
 	/**
 	 * Create the application.
