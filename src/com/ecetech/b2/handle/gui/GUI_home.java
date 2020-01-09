@@ -202,7 +202,7 @@ public class GUI_home {
 		
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(0, 0, 1005, 566);
-		panel_5.add(panel_6);
+		layeredPane.add(panel_6);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(102, 255, 153));
