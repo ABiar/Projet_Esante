@@ -90,35 +90,6 @@ public class GUI_home {
 		panel.add(barre_Menu);
 		barre_Menu.setLayout(null);
 		
-		// declaration autre panel 
-		
-		JPanel accueil = new JPanel();
-		accueil.setBackground(new Color(102, 255, 153));
-		accueil.setBounds(0, 0, 1005, 546);
-		layeredPane.add(accueil);
-		accueil.setLayout(null);
-		
-		JPanel profil = new JPanel();
-		profil.setBackground(new Color(102, 255, 153));
-		profil.setForeground(new Color(153, 255, 153));
-		profil.setBounds(0, 0, 1005, 546);
-		layeredPane.add(profil);
-		profil.setLayout(null);
-		
-		JPanel examen = new JPanel();
-		examen.setBackground(new Color(102, 255, 153));
-		examen.setBounds(0, 0, 1005, 546);
-		layeredPane.add(examen);
-		examen.setLayout(null);
-		
-		JPanel diagnostic = new JPanel();
-		diagnostic.setBounds(0, 0, 1005, 566);
-		layeredPane.add(diagnostic);
-		
-		JPanel aide = new JPanel();
-		aide.setBounds(0, 0, 1005, 566);
-		layeredPane.add(aide);
-		
 		
 		//Barre de recherche
 		
@@ -235,13 +206,32 @@ public class GUI_home {
 		aidebutton.setBounds(42, 515, 136, 44);
 		barre_Menu.add(aidebutton);
 		
+		// declaration autre panel 
 		
-		// label panel examen examen
-		JLabel lblExamen_1 = new JLabel("EXAMEN");
-		lblExamen_1.setForeground(new Color(0, 51, 51));
-		lblExamen_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblExamen_1.setBounds(440, 36, 185, 47);
-		examen.add(lblExamen_1);
+		JPanel accueil = new JPanel();
+		accueil.setBackground(new Color(102, 255, 153));
+		accueil.setBounds(0, 0, 1005, 546);
+		layeredPane.add(accueil);
+		accueil.setLayout(null);
+		
+		// label panel accueil accueil
+		JLabel lblBienvenue = new JLabel("BIENVENUE");
+		lblBienvenue.setForeground(new Color(0, 51, 51));
+		lblBienvenue.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblBienvenue.setBounds(417, 29, 252, 47);
+		accueil.add(lblBienvenue);
+		
+		JLabel imageAccueil = new JLabel("");
+		imageAccueil.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
+		imageAccueil.setBounds(451, 109, 160, 362);
+		accueil.add(imageAccueil);
+		
+		JPanel profil = new JPanel();
+		profil.setBackground(new Color(102, 255, 153));
+		profil.setForeground(new Color(153, 255, 153));
+		profil.setBounds(0, 0, 1005, 546);
+		layeredPane.add(profil);
+		profil.setLayout(null);
 		
 		// label panel profil profil
 		JLabel lblProfil_1 = new JLabel("PROFIL");
@@ -320,17 +310,29 @@ public class GUI_home {
 		textField_7.setBounds(587, 382, 194, 19);
 		profil.add(textField_7);
 		
-		// label panel accueil accueil
-		JLabel lblBienvenue = new JLabel("BIENVENUE");
-		lblBienvenue.setForeground(new Color(0, 51, 51));
-		lblBienvenue.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblBienvenue.setBounds(417, 29, 252, 47);
-		accueil.add(lblBienvenue);
+		JPanel examen = new JPanel();
+		examen.setBackground(new Color(102, 255, 153));
+		examen.setBounds(0, 0, 1005, 546);
+		layeredPane.add(examen);
+		examen.setLayout(null);
 		
-		JLabel imageAccueil = new JLabel("");
-		imageAccueil.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
-		imageAccueil.setBounds(451, 109, 160, 362);
-		accueil.add(imageAccueil);
+		
+		// label panel examen examen
+		JLabel lblExamen_1 = new JLabel("EXAMEN");
+		lblExamen_1.setForeground(new Color(0, 51, 51));
+		lblExamen_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblExamen_1.setBounds(440, 36, 185, 47);
+		examen.add(lblExamen_1);
+		
+		JPanel diagnostic = new JPanel();
+		diagnostic.setBackground(new Color(102, 255, 153));
+		diagnostic.setBounds(0, 0, 1005, 566);
+		layeredPane.add(diagnostic);
+		
+		JPanel aide = new JPanel();
+		aide.setBackground(new Color(102, 255, 153));
+		aide.setBounds(0, 0, 1005, 566);
+		layeredPane.add(aide);
 		
 		
 		//action des bouttons present dans le panel 2 permettant la redirection vers les autres panels
