@@ -61,6 +61,8 @@ public class GUI_home {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		//creation et paramettrage de la fenetre principal
+		
 		framebis = new JFrame();
 		framebis.setBounds(100, 100, 1277, 682);
 		framebis.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,24 +72,18 @@ public class GUI_home {
 		framebis.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
+		// panel permettant d'avoir plusieurs panel sur une application (multi fenetre dans une meme fenetre)
+		JLayeredPane layeredPane = new JLayeredPane();
+		layeredPane.setBounds(258, 99, 1005, 546);
+		panel.add(layeredPane);
+		
+		// declaration panel qui ne bouge pas gauche menu et en haut barre de recherche
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(102, 205, 170));
 		panel_1.setForeground(new Color(0, 0, 0));
 		panel_1.setBounds(258, 0, 1005, 103);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
-		
-		textField = new JTextField();
-		textField.setBounds(888, 37, 107, 19);
-		panel_1.add(textField);
-		textField.setColumns(10);
-		
-		//Barre de recherche
-		JLabel lblNewLabel_2 = new JLabel("");
-		//lblNewLabel_2.setIcon(new ImageIcon("D:\\Users\\elian\\eclipse\\handle\\img\\icons8_search_32px.png"));
-		lblNewLabel_2.setIcon(new ImageIcon("img\\icons8_search_32px.png"));
-		lblNewLabel_2.setBounds(848, 0, 157, 97);
-		panel_1.add(lblNewLabel_2);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setForeground(new Color(0, 0, 0));
@@ -96,13 +92,56 @@ public class GUI_home {
 		panel.add(panel_2);
 		panel_2.setLayout(null);
 		
+		// declaration autre panel 
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(102, 255, 153));
+		panel_3.setBounds(0, 0, 1005, 546);
+		layeredPane.add(panel_3);
+		panel_3.setLayout(null);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(new Color(102, 255, 153));
+		panel_4.setForeground(new Color(153, 255, 153));
+		panel_4.setBounds(0, 0, 1005, 546);
+		layeredPane.add(panel_4);
+		panel_4.setLayout(null);
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(new Color(102, 255, 153));
+		panel_5.setBounds(0, 0, 1005, 546);
+		layeredPane.add(panel_5);
+		panel_5.setLayout(null);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBounds(0, 0, 1005, 566);
+		layeredPane.add(panel_6);
+		
+		JPanel panel_7 = new JPanel();
+		panel_7.setBounds(0, 0, 1005, 566);
+		layeredPane.add(panel_7);
+		
+		
+		//Barre de recherche
+		
+		textField = new JTextField();
+		textField.setBounds(888, 37, 107, 19);
+		panel_1.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon("img\\icons8_search_32px.png"));
+		lblNewLabel_2.setBounds(848, 0, 157, 97);
+		panel_1.add(lblNewLabel_2);
+		
+		
 		//Logo Handle
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("img\\logo handle.PNG"));
 		lblNewLabel.setBounds(58, 0, 122, 155);
 		panel_2.add(lblNewLabel);
 		
-		//Bouton Accueil
+		//label (zone de texte) Accueil
 		JLabel lblNewLabel_1 = new JLabel("Accueil");
 		lblNewLabel_1.setIcon(new ImageIcon("img\\icons8_home_50px.png"));
 		lblNewLabel_1.setForeground(Color.WHITE);
@@ -110,7 +149,7 @@ public class GUI_home {
 		lblNewLabel_1.setBounds(42, 206, 167, 48);
 		panel_2.add(lblNewLabel_1);
 		
-		//Bouton Profil
+		//label (zone de texte) Profil
 		JLabel lblProfil = new JLabel("Profil");
 		lblProfil.setIcon(new ImageIcon("img\\icons8_gender_neutral_user_50px.png"));
 		lblProfil.setVerticalAlignment(SwingConstants.BOTTOM);
@@ -119,7 +158,7 @@ public class GUI_home {
 		lblProfil.setBounds(42, 282, 167, 48);
 		panel_2.add(lblProfil);
 		
-		//Bouton Examen
+		//label (zone de texte) Examen
 		JLabel lblExamen = new JLabel("Examen");
 		lblExamen.setIcon(new ImageIcon("img\\icons8_medical_doctor_50px.png"));
 		lblExamen.setVerticalAlignment(SwingConstants.BOTTOM);
@@ -128,7 +167,7 @@ public class GUI_home {
 		lblExamen.setBounds(42, 356, 178, 48);
 		panel_2.add(lblExamen);
 		
-		//Bouton Diagnostique
+		//label (zone de texte) Diagnostique
 		JLabel lblDiagnostique = new JLabel("Diagnostique");
 		lblDiagnostique.setIcon(new ImageIcon("img\\icons8_combo_chart_50px.png"));
 		lblDiagnostique.setVerticalAlignment(SwingConstants.BOTTOM);
@@ -137,7 +176,7 @@ public class GUI_home {
 		lblDiagnostique.setBounds(10, 432, 268, 48);
 		panel_2.add(lblDiagnostique);
 		
-		//Bouton Aide
+		//label (zone de texte) Aide
 		JLabel lblAide = new JLabel("Aide");
 		lblAide.setIcon(new ImageIcon("img\\icons8_help_50px.png"));
 		lblAide.setVerticalAlignment(SwingConstants.BOTTOM);
@@ -146,7 +185,9 @@ public class GUI_home {
 		lblAide.setBounds(42, 511, 178, 48);
 		panel_2.add(lblAide);
 		
-		//Pourrais-tu commenter ce que c'est de la ligne 150 à 193
+		//boutton present en permanance panel 2 (panel sur le coté gauche)
+		
+		//bouton accueil
 		JButton accueilbutton = new JButton("");
 		accueilbutton.setForeground(SystemColor.desktop);
 		accueilbutton.setBackground(new Color(255, 255, 255));
@@ -156,6 +197,7 @@ public class GUI_home {
 		accueilbutton.setBorderPainted(false);
 		panel_2.add(accueilbutton);
 		
+		//bouton profil
 		JButton profilbutton = new JButton("");
 		profilbutton.setOpaque(false);
 		profilbutton.setForeground(Color.BLACK);
@@ -165,6 +207,7 @@ public class GUI_home {
 		profilbutton.setBounds(42, 282, 167, 44);
 		panel_2.add(profilbutton);
 		
+		//bouton examen
 		JButton examenbutton = new JButton("");
 		examenbutton.setOpaque(false);
 		examenbutton.setForeground(Color.BLACK);
@@ -174,6 +217,7 @@ public class GUI_home {
 		examenbutton.setBounds(42, 356, 167, 44);
 		panel_2.add(examenbutton);
 		
+		//boutton diagnostique
 		JButton diagnostiquebutton = new JButton("");
 		diagnostiquebutton.setOpaque(false);
 		diagnostiquebutton.setForeground(Color.BLACK);
@@ -183,6 +227,7 @@ public class GUI_home {
 		diagnostiquebutton.setBounds(13, 432, 236, 44);
 		panel_2.add(diagnostiquebutton);
 		
+		//bouton aide
 		JButton aidebutton = new JButton("");
 		aidebutton.setOpaque(false);
 		aidebutton.setForeground(Color.BLACK);
@@ -192,38 +237,15 @@ public class GUI_home {
 		aidebutton.setBounds(42, 515, 136, 44);
 		panel_2.add(aidebutton);
 		
-		//Pourrais-tu commenter les lignes 196 à 318 je comprends pas trop ce que c'est.
-		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(258, 99, 1005, 546);
-		panel.add(layeredPane);
 		
-		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(new Color(102, 255, 153));
-		panel_5.setBounds(0, 0, 1005, 546);
-		layeredPane.add(panel_5);
-		panel_5.setLayout(null);
-		
+		// label panel examen panel_5
 		JLabel lblExamen_1 = new JLabel("EXAMEN");
 		lblExamen_1.setForeground(new Color(0, 51, 51));
 		lblExamen_1.setFont(new Font("Tahoma", Font.BOLD, 40));
 		lblExamen_1.setBounds(440, 36, 185, 47);
 		panel_5.add(lblExamen_1);
 		
-		JPanel panel_7 = new JPanel();
-		panel_7.setBounds(0, 0, 1005, 566);
-		layeredPane.add(panel_7);
-		
-		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(0, 0, 1005, 566);
-		layeredPane.add(panel_6);
-		
-		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(102, 255, 153));
-		panel_4.setForeground(new Color(153, 255, 153));
-		panel_4.setBounds(0, 0, 1005, 546);
-		layeredPane.add(panel_4);
-		panel_4.setLayout(null);
-		
+		// label panel profil panel_4
 		JLabel lblProfil_1 = new JLabel("PROFIL");
 		lblProfil_1.setForeground(new Color(0, 51, 51));
 		lblProfil_1.setFont(new Font("Tahoma", Font.BOLD, 40));
@@ -300,12 +322,7 @@ public class GUI_home {
 		textField_7.setBounds(587, 382, 194, 19);
 		panel_4.add(textField_7);
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(102, 255, 153));
-		panel_3.setBounds(0, 0, 1005, 546);
-		layeredPane.add(panel_3);
-		panel_3.setLayout(null);
-		
+		// label panel accueil panel_3
 		JLabel lblNewLabel_3 = new JLabel("BIENVENUE");
 		lblNewLabel_3.setForeground(new Color(0, 51, 51));
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 40));
@@ -317,6 +334,8 @@ public class GUI_home {
 		lblNewLabel_4.setBounds(451, 109, 160, 362);
 		panel_3.add(lblNewLabel_4);
 		
+		
+		//action des bouttons present dans le panel 2 permettant la redirection vers les autres panels
 		accueilbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				layeredPane.removeAll();
