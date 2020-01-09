@@ -78,7 +78,7 @@ public class GUI_home {
 		// declaration panel qui ne bouge pas gauche menu et en haut barre de recherche
 		JPanel barre_recherche = new JPanel();
 		barre_recherche.setBackground(new Color(102, 205, 170));
-		barre_recherche.setForeground(new Color(0, 0, 0));
+		barre_recherche.setForeground(new Color(250, 240, 230));
 		barre_recherche.setBounds(258, 0, 1005, 103);
 		panel.add(barre_recherche);
 		barre_recherche.setLayout(null);
@@ -102,6 +102,12 @@ public class GUI_home {
 		lblSearch.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_search_32px.png")));
 		lblSearch.setBounds(848, 0, 157, 97);
 		barre_recherche.add(lblSearch);
+		
+		JLabel lblBienvenueElian = new JLabel("Bienvenu(e) Elian");
+		lblBienvenueElian.setForeground(new Color(250, 240, 230));
+		lblBienvenueElian.setFont(new Font("Tahoma", Font.BOLD, 25));
+		lblBienvenueElian.setBounds(24, 40, 232, 31);
+		barre_recherche.add(lblBienvenueElian);
 		
 		
 		//Logo Handle
@@ -209,6 +215,7 @@ public class GUI_home {
 		// declaration autre panel 
 		
 		JPanel accueil = new JPanel();
+		accueil.setForeground(new Color(224, 255, 255));
 		accueil.setBackground(new Color(102, 255, 153));
 		accueil.setBounds(0, 0, 1005, 546);
 		layeredPane.add(accueil);
@@ -216,15 +223,44 @@ public class GUI_home {
 		
 		// label panel accueil accueil
 		JLabel lblBienvenue = new JLabel("BIENVENUE");
-		lblBienvenue.setForeground(new Color(0, 51, 51));
+		lblBienvenue.setForeground(new Color(0, 0, 128));
 		lblBienvenue.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblBienvenue.setBounds(417, 29, 252, 47);
+		lblBienvenue.setBounds(64, 36, 252, 47);
 		accueil.add(lblBienvenue);
 		
 		JLabel imageAccueil = new JLabel("");
 		imageAccueil.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
-		imageAccueil.setBounds(451, 109, 160, 362);
+		imageAccueil.setBounds(113, 114, 160, 362);
 		accueil.add(imageAccueil);
+		
+		JLabel lblDernierDiagnostique = new JLabel("DERNIER DIAGNOSTIQUE");
+		lblDernierDiagnostique.setForeground(new Color(0, 128, 128));
+		lblDernierDiagnostique.setFont(new Font("Tahoma", Font.BOLD, 34));
+		lblDernierDiagnostique.setBounds(460, 106, 448, 47);
+		accueil.add(lblDernierDiagnostique);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(GUI_home.class.getResource("/img/health_checkup_100px.png")));
+		lblNewLabel.setBounds(356, 226, 114, 95);
+		accueil.add(lblNewLabel);
+		
+		JLabel lblRaliserLe = new JLabel("R\u00E9aliser le 12/12/2019");
+		lblRaliserLe.setForeground(new Color(0, 128, 128));
+		lblRaliserLe.setFont(new Font("Tahoma", Font.BOLD, 30));
+		lblRaliserLe.setBounds(488, 248, 364, 47);
+		accueil.add(lblRaliserLe);
+		
+		JButton btnNewButton = new JButton("Voir");
+		btnNewButton.setForeground(new Color(245, 255, 250));
+		btnNewButton.setBackground(new Color(0, 128, 128));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		btnNewButton.setBounds(876, 254, 81, 39);
+		accueil.add(btnNewButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+		lblNewLabel_1.setBounds(957, 504, 38, 32);
+		accueil.add(lblNewLabel_1);
 		
 		JPanel profil = new JPanel();
 		profil.setBackground(new Color(102, 255, 153));
@@ -310,6 +346,26 @@ public class GUI_home {
 		textField_7.setBounds(587, 382, 194, 19);
 		profil.add(textField_7);
 		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+		label.setBounds(957, 504, 38, 32);
+		profil.add(label);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_secured_letter_50px.png")));
+		lblNewLabel_2.setBounds(94, 291, 50, 50);
+		profil.add(lblNewLabel_2);
+		
+		JLabel label_4 = new JLabel("");
+		label_4.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_password_50px.png")));
+		label_4.setBounds(94, 207, 53, 60);
+		profil.add(label_4);
+		
+		JLabel label_5 = new JLabel("");
+		label_5.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_male_user_50px.png")));
+		label_5.setBounds(94, 137, 50, 60);
+		profil.add(label_5);
+		
 		JPanel examen = new JPanel();
 		examen.setBackground(new Color(102, 255, 153));
 		examen.setBounds(0, 0, 1005, 546);
@@ -324,15 +380,67 @@ public class GUI_home {
 		lblExamen_1.setBounds(440, 36, 185, 47);
 		examen.add(lblExamen_1);
 		
+		JLabel label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+		label_1.setBounds(957, 504, 38, 32);
+		examen.add(label_1);
+		
+		JLabel lblAfinDetablirVotre = new JLabel("AFIN D'ETABLIR AU MIEUX VOTRE PROFIL ET UN DIAGNOSTIQUE PLUSIEURS QUESTION ");
+		lblAfinDetablirVotre.setForeground(new Color(0, 128, 128));
+		lblAfinDetablirVotre.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblAfinDetablirVotre.setBounds(60, 93, 985, 47);
+		examen.add(lblAfinDetablirVotre);
+		
+		JLabel lblPoserEnFonction = new JLabel("VONT VOUS ETRE POSER EN FONCTION DE VOS REPONSE AU PRECEDENTE QUESTION");
+		lblPoserEnFonction.setForeground(new Color(0, 128, 128));
+		lblPoserEnFonction.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblPoserEnFonction.setBounds(84, 123, 867, 47);
+		examen.add(lblPoserEnFonction);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
+		lblNewLabel_3.setBounds(20, 174, 80, 80);
+		examen.add(lblNewLabel_3);
+		
+		JLabel lblAttentionVosRepo = new JLabel("ATTENTION VOS REPONSES AU QUESTION SONT DETERMINANTE AFIN DE REALISER UN DIAGNOSTIQUE CORRECT !");
+		lblAttentionVosRepo.setForeground(new Color(255, 0, 0));
+		lblAttentionVosRepo.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblAttentionVosRepo.setBounds(110, 190, 921, 47);
+		examen.add(lblAttentionVosRepo);
+		
 		JPanel diagnostic = new JPanel();
 		diagnostic.setBackground(new Color(102, 255, 153));
-		diagnostic.setBounds(0, 0, 1005, 566);
+		diagnostic.setBounds(0, 0, 1005, 546);
 		layeredPane.add(diagnostic);
+		diagnostic.setLayout(null);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+		label_2.setBounds(957, 504, 38, 32);
+		diagnostic.add(label_2);
+		
+		JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
+		lblDiagnostique_1.setForeground(new Color(0, 51, 51));
+		lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblDiagnostique_1.setBounds(363, 10, 330, 47);
+		diagnostic.add(lblDiagnostique_1);
 		
 		JPanel aide = new JPanel();
 		aide.setBackground(new Color(102, 255, 153));
-		aide.setBounds(0, 0, 1005, 566);
+		aide.setBounds(0, 0, 1005, 546);
 		layeredPane.add(aide);
+		aide.setLayout(null);
+		
+		JLabel label_3 = new JLabel("");
+		label_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+		label_3.setBounds(957, 504, 38, 32);
+		aide.add(label_3);
+		
+		JLabel lblAide_1 = new JLabel("AIDE");
+		lblAide_1.setForeground(new Color(0, 51, 51));
+		lblAide_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblAide_1.setBounds(467, 10, 102, 47);
+		aide.add(lblAide_1);
 		
 		
 		//action des bouttons present dans le panel 2 permettant la redirection vers les autres panels
