@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
-
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -130,20 +130,20 @@ public class GUI_home {
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("img\\icons8_search_32px.png"));
+		lblNewLabel_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_search_32px.png")));
 		lblNewLabel_2.setBounds(848, 0, 157, 97);
 		panel_1.add(lblNewLabel_2);
 		
 		
 		//Logo Handle
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("img\\logo handle.PNG"));
+		lblNewLabel.setIcon(new ImageIcon(GUI_home.class.getResource("/img/logo handle.PNG")));
 		lblNewLabel.setBounds(58, 0, 122, 155);
 		panel_2.add(lblNewLabel);
 		
 		//label (zone de texte) Accueil
 		JLabel lblNewLabel_1 = new JLabel("Accueil");
-		lblNewLabel_1.setIcon(new ImageIcon("img\\icons8_home_50px.png"));
+		lblNewLabel_1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_home_50px.png")));
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 32));
 		lblNewLabel_1.setBounds(42, 206, 167, 48);
@@ -151,7 +151,7 @@ public class GUI_home {
 		
 		//label (zone de texte) Profil
 		JLabel lblProfil = new JLabel("Profil");
-		lblProfil.setIcon(new ImageIcon("img\\icons8_gender_neutral_user_50px.png"));
+		lblProfil.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_gender_neutral_user_50px.png")));
 		lblProfil.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblProfil.setForeground(Color.WHITE);
 		lblProfil.setFont(new Font("Tahoma", Font.PLAIN, 32));
@@ -160,7 +160,7 @@ public class GUI_home {
 		
 		//label (zone de texte) Examen
 		JLabel lblExamen = new JLabel("Examen");
-		lblExamen.setIcon(new ImageIcon("img\\icons8_medical_doctor_50px.png"));
+		lblExamen.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_medical_doctor_50px.png")));
 		lblExamen.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblExamen.setForeground(Color.WHITE);
 		lblExamen.setFont(new Font("Tahoma", Font.PLAIN, 32));
@@ -169,7 +169,7 @@ public class GUI_home {
 		
 		//label (zone de texte) Diagnostique
 		JLabel lblDiagnostique = new JLabel("Diagnostique");
-		lblDiagnostique.setIcon(new ImageIcon("img\\icons8_combo_chart_50px.png"));
+		lblDiagnostique.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_combo_chart_50px.png")));
 		lblDiagnostique.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblDiagnostique.setForeground(Color.WHITE);
 		lblDiagnostique.setFont(new Font("Tahoma", Font.PLAIN, 32));
@@ -178,7 +178,7 @@ public class GUI_home {
 		
 		//label (zone de texte) Aide
 		JLabel lblAide = new JLabel("Aide");
-		lblAide.setIcon(new ImageIcon("img\\icons8_help_50px.png"));
+		lblAide.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_help_50px.png")));
 		lblAide.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblAide.setForeground(Color.WHITE);
 		lblAide.setFont(new Font("Tahoma", Font.PLAIN, 32));
@@ -330,7 +330,7 @@ public class GUI_home {
 		panel_3.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setIcon(new ImageIcon("img\\corpsbioflash.png"));
+		lblNewLabel_4.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
 		lblNewLabel_4.setBounds(451, 109, 160, 362);
 		panel_3.add(lblNewLabel_4);
 		
