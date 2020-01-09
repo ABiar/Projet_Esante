@@ -54,7 +54,7 @@ public class connexion {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\elian\\git\\Handle\\handle\\img\\logo handle.PNG"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("img\\logo handle.PNG"));
 		frame.setBounds(100, 100, 435, 438);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
@@ -73,13 +73,13 @@ public class connexion {
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\elian\\git\\Handle\\handle\\img\\lock_100px.png"));
+		lblNewLabel.setIcon(new ImageIcon("img\\lock_100px.png"));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel.setBounds(25, 212, 100, 109);
 		panel.add(lblNewLabel);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\elian\\git\\Handle\\handle\\img\\customer_100px.png"));
+		label.setIcon(new ImageIcon("img\\customer_100px.png"));
 		label.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		label.setBounds(25, 102, 100, 109);
 		panel.add(label);
@@ -132,7 +132,7 @@ public class connexion {
 	}
 
 	public static void main(String[] args) throws IOException {
-		File file = new File("D://Users//elian//Desktop/fichier.txt");
+		File file = new File("fichier.txt");
 		if(!file.exists()) 
 		{
 			try {
