@@ -127,25 +127,25 @@ public class GUI_home {
 		barre_recherche.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_search_32px.png")));
-		lblNewLabel_2.setBounds(848, 0, 157, 97);
-		barre_recherche.add(lblNewLabel_2);
+		JLabel lblSearch = new JLabel("");
+		lblSearch.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_search_32px.png")));
+		lblSearch.setBounds(848, 0, 157, 97);
+		barre_recherche.add(lblSearch);
 		
 		
 		//Logo Handle
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(GUI_home.class.getResource("/img/logo handle.PNG")));
-		lblNewLabel.setBounds(58, 0, 122, 155);
-		barre_Menu.add(lblNewLabel);
+		JLabel logoHandle = new JLabel("");
+		logoHandle.setIcon(new ImageIcon(GUI_home.class.getResource("/img/logo handle.PNG")));
+		logoHandle.setBounds(58, 0, 122, 155);
+		barre_Menu.add(logoHandle);
 		
 		//label (zone de texte) Accueil
-		JLabel lblNewLabel_1 = new JLabel("Accueil");
-		lblNewLabel_1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_home_50px.png")));
-		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 32));
-		lblNewLabel_1.setBounds(42, 206, 167, 48);
-		barre_Menu.add(lblNewLabel_1);
+		JLabel lblAccueil = new JLabel("Accueil");
+		lblAccueil.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_home_50px.png")));
+		lblAccueil.setForeground(Color.WHITE);
+		lblAccueil.setFont(new Font("Tahoma", Font.PLAIN, 32));
+		lblAccueil.setBounds(42, 206, 167, 48);
+		barre_Menu.add(lblAccueil);
 		
 		//label (zone de texte) Profil
 		JLabel lblProfil = new JLabel("Profil");
@@ -250,10 +250,10 @@ public class GUI_home {
 		lblProfil_1.setBounds(429, 28, 185, 47);
 		profil.add(lblProfil_1);
 		
-		JLabel lblNewLabel_5 = new JLabel("IDENTIFIANT");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblNewLabel_5.setBounds(157, 111, 141, 47);
-		profil.add(lblNewLabel_5);
+		JLabel lblIdentifiant = new JLabel("IDENTIFIANT");
+		lblIdentifiant.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+		lblIdentifiant.setBounds(157, 111, 141, 47);
+		profil.add(lblIdentifiant);
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(157, 157, 194, 19);
@@ -321,16 +321,16 @@ public class GUI_home {
 		profil.add(textField_7);
 		
 		// label panel accueil accueil
-		JLabel lblNewLabel_3 = new JLabel("BIENVENUE");
-		lblNewLabel_3.setForeground(new Color(0, 51, 51));
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblNewLabel_3.setBounds(417, 29, 252, 47);
-		accueil.add(lblNewLabel_3);
+		JLabel lblBienvenue = new JLabel("BIENVENUE");
+		lblBienvenue.setForeground(new Color(0, 51, 51));
+		lblBienvenue.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblBienvenue.setBounds(417, 29, 252, 47);
+		accueil.add(lblBienvenue);
 		
-		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
-		lblNewLabel_4.setBounds(451, 109, 160, 362);
-		accueil.add(lblNewLabel_4);
+		JLabel imageAccueil = new JLabel("");
+		imageAccueil.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
+		imageAccueil.setBounds(451, 109, 160, 362);
+		accueil.add(imageAccueil);
 		
 		
 		//action des bouttons present dans le panel 2 permettant la redirection vers les autres panels
