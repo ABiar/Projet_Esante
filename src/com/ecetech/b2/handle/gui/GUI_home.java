@@ -200,6 +200,10 @@ public class GUI_home {
 		lblExamen_1.setBounds(440, 36, 185, 47);
 		panel_5.add(lblExamen_1);
 		
+		JPanel panel_7 = new JPanel();
+		panel_7.setBounds(0, 0, 1005, 566);
+		layeredPane.add(panel_7);
+		
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(0, 0, 1005, 566);
 		layeredPane.add(panel_6);

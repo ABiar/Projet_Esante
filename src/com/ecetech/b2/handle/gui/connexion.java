@@ -114,10 +114,10 @@ public class connexion {
 					String b = passwordField.getText().trim();
 					if (a.equals("elian") && b.equals("1234"))
 					{
-						/*JOptionPane.showMessageDialog(null, "Connexion reussi");
+						JOptionPane.showMessageDialog(null, "Connexion reussi");
 						frame.dispose();
 						GUI_home window = new GUI_home();
-						window.framebis.setVisible(true);*/
+						window.framebis.setVisible(true);
 					}
 					else
 					{
