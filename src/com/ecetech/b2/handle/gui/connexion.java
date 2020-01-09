@@ -152,7 +152,7 @@ public class connexion {
 				while ((ligne=br.readLine())!=null){
 					if (ligne.contains("elian"))
 					{
-						System.out.println("Connexion reussi");
+						System.out.println("Connexion reuss");
 					}
 				}
 				br.close(); 
