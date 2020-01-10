@@ -54,7 +54,7 @@ public class connexion {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("img\\logo handle.PNG"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(connexion.class.getResource("/img/logo handle.PNG")));
 		frame.setBounds(100, 100, 435, 381);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);

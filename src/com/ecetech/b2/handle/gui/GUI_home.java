@@ -409,23 +409,6 @@ public class GUI_home {
 		lblAttentionVosRepo.setBounds(110, 190, 921, 47);
 		examen.add(lblAttentionVosRepo);
 		
-		JPanel diagnostic = new JPanel();
-		diagnostic.setBackground(new Color(102, 255, 153));
-		diagnostic.setBounds(0, 0, 1005, 546);
-		layeredPane.add(diagnostic);
-		diagnostic.setLayout(null);
-		
-		JLabel label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-		label_2.setBounds(957, 504, 38, 32);
-		diagnostic.add(label_2);
-		
-		JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
-		lblDiagnostique_1.setForeground(new Color(0, 51, 51));
-		lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblDiagnostique_1.setBounds(363, 10, 330, 47);
-		diagnostic.add(lblDiagnostique_1);
-		
 		JPanel aide = new JPanel();
 		aide.setBackground(new Color(102, 255, 153));
 		aide.setBounds(0, 0, 1005, 546);
@@ -442,6 +425,23 @@ public class GUI_home {
 		lblAide_1.setFont(new Font("Tahoma", Font.BOLD, 40));
 		lblAide_1.setBounds(467, 10, 102, 47);
 		aide.add(lblAide_1);
+		
+		JPanel diagnostic = new JPanel();
+		diagnostic.setBackground(new Color(102, 255, 153));
+		diagnostic.setBounds(0, 0, 1005, 546);
+		layeredPane.add(diagnostic);
+		diagnostic.setLayout(null);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+		label_2.setBounds(957, 504, 38, 32);
+		diagnostic.add(label_2);
+		
+		JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
+		lblDiagnostique_1.setForeground(new Color(0, 51, 51));
+		lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblDiagnostique_1.setBounds(363, 10, 330, 47);
+		diagnostic.add(lblDiagnostique_1);
 		
 		
 		//action des bouttons present dans le panel 2 permettant la redirection vers les autres panels
