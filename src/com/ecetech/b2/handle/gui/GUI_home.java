@@ -64,10 +64,10 @@ public class GUI_home {
 		//creation et paramettrage de la fenetre principal
 		
 		framebis = new JFrame();
+		framebis.setResizable(false);
 		framebis.setIconImage(Toolkit.getDefaultToolkit().getImage(GUI_home.class.getResource("/img/logo handle.PNG")));
 		framebis.setBounds(100, 100, 1277, 682);
 		framebis.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		framebis.setResizable(false);
 		
 		JPanel panel = new JPanel();
 		framebis.getContentPane().add(panel, BorderLayout.CENTER);
