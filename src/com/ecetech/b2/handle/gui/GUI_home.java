@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.JLayeredPane;
 
+// bonjour augustin
 
 public class GUI_home {
 
