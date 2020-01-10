@@ -40,7 +40,7 @@ public class connexion {
 	 * Launch the application.
 	 * @throws IOException 
 	 */
-	
+	/** test*/
 
 	/**
 	 * Create the application.
@@ -54,8 +54,8 @@ public class connexion {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("img\\logo handle.PNG"));
-		frame.setBounds(100, 100, 435, 381);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\elian\\git\\Handle\\handle\\img\\logo handle.PNG"));
+		frame.setBounds(100, 100, 435, 438);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		
@@ -68,27 +68,27 @@ public class connexion {
 		textField.setForeground(new Color(255, 255, 255));
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		textField.setBackground(new Color(0, 102, 102));
-		textField.setBounds(184, 131, 210, 34);
+		textField.setBounds(184, 143, 210, 34);
 		panel.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(connexion.class.getResource("/img/password_60px.png")));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\elian\\git\\Handle\\handle\\img\\lock_100px.png"));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel.setBounds(78, 173, 67, 86);
+		lblNewLabel.setBounds(25, 212, 100, 109);
 		panel.add(lblNewLabel);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(connexion.class.getResource("/img/user_groups_60px.png")));
+		label.setIcon(new ImageIcon("C:\\Users\\elian\\git\\Handle\\handle\\img\\customer_100px.png"));
 		label.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		label.setBounds(78, 101, 67, 86);
+		label.setBounds(25, 102, 100, 109);
 		panel.add(label);
 		
 		JButton btnSignIn = new JButton("SIGN IN");
-		btnSignIn.setForeground(new Color(0, 191, 255));
-		btnSignIn.setBackground(new Color(0, 128, 128));
+		btnSignIn.setForeground(new Color(255, 255, 255));
+		btnSignIn.setBackground(new Color(0, 102, 102));
 		btnSignIn.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		btnSignIn.setBounds(126, 273, 177, 35);
+		btnSignIn.setBounds(135, 350, 177, 35);
 		panel.add(btnSignIn);
 		
 		JLabel lblLogin = new JLabel("LOGIN");
@@ -101,7 +101,7 @@ public class connexion {
 		passwordField.setForeground(Color.WHITE);
 		passwordField.setFont(new Font("Tahoma", Font.BOLD, 20));
 		passwordField.setBackground(new Color(0, 102, 102));
-		passwordField.setBounds(184, 207, 210, 34);
+		passwordField.setBounds(184, 271, 210, 34);
 		panel.add(passwordField);
 		
 		/*test commit */
@@ -132,7 +132,7 @@ public class connexion {
 	}
 
 	public static void main(String[] args) throws IOException {
-		File file = new File("fichier.txt");
+		File file = new File("D://Users//elian//Desktop/fichier.txt");
 		if(!file.exists()) 
 		{
 			try {
