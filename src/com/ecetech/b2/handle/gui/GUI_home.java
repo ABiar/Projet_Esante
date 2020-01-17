@@ -205,7 +205,7 @@ public class GUI_home {
 		diagnostiquebutton.setBounds(13, 432, 236, 44);
 		barre_Menu.add(diagnostiquebutton);
 		
-		//bouton aide
+		//bouton aidE
 		JButton aidebutton = new JButton("");
 		aidebutton.setOpaque(false);
 		aidebutton.setForeground(Color.BLACK);

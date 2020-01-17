@@ -10,6 +10,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseMotionAdapter;
+import java.awt.event.MouseEvent;
 
 public class GUI_inscription extends JFrame {
 
@@ -46,17 +49,31 @@ public class GUI_inscription extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel north = new JPanel();
+		north.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseDragged(MouseEvent e) {
+			}
+		});
 		north.setBackground(new Color(255, 165, 0));
 		north.setBounds(0, 0, 548, 65);
 		contentPane.add(north);
 		north.setLayout(null);
 		
-		JButton fermer = new JButton("FERMER");
-		fermer.setBounds(409, 10, 85, 21);
+		JButton fermer = new JButton("");
+		fermer.setBackground(new Color(255, 165, 0));
+		fermer.setIcon(new ImageIcon(GUI_inscription.class.getResource("/img/close.png")));
+		fermer.setBounds(453, 10, 40, 45);
+		fermer.setContentAreaFilled(false);
+		fermer.setOpaque(false);
+		fermer.setBorderPainted(false);
 		north.add(fermer);
 		
-		JButton Reduire = new JButton("REDUIRE");
-		Reduire.setBounds(314, 10, 85, 21);
+		JButton Reduire = new JButton("");
+		Reduire.setIcon(new ImageIcon(GUI_inscription.class.getResource("/img/icons8-fl\u00E8che-r\u00E9duire-48.png")));
+		Reduire.setBounds(391, 10, 40, 45);
+		Reduire.setContentAreaFilled(false);
+		Reduire.setOpaque(false);
+		Reduire.setBorderPainted(false);
 		north.add(Reduire);
 		
 		JPanel panel_1 = new JPanel();
