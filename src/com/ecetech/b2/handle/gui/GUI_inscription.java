@@ -59,7 +59,7 @@ public class GUI_inscription extends JFrame {
 		contentPane.add(north);
 		north.setLayout(null);
 		
-		JButton fermer = new JButton("");
+		JButton fermer = new JButton("");//
 		fermer.setBackground(new Color(255, 165, 0));
 		fermer.setIcon(new ImageIcon(GUI_inscription.class.getResource("/img/close.png")));
 		fermer.setBounds(453, 10, 40, 45);
