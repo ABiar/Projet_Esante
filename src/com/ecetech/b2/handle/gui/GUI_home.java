@@ -7,6 +7,9 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -32,7 +35,8 @@ public class GUI_home {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
-
+	
+	int xx,xy;
 	/**
 	 * Launch the application.
 	 */
@@ -80,6 +84,21 @@ public class GUI_home {
 		
 		// declaration panel qui ne bouge pas gauche menu et en haut barre de recherche
 		JPanel barre_recherche = new JPanel();
+		/*barre_recherche.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				xx = e.getX();
+				xy = e.getY();
+			}
+		});
+		barre_recherche.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseDragged(MouseEvent f) {
+				int x = f.getXOnScreen();
+				int y = f.getYOnScreen();
+				GUI_home.this.setLocation(x - xx,y -  xy);
+			}
+		});*/
 		barre_recherche.setBackground(new Color(102, 205, 170));
 		barre_recherche.setForeground(new Color(250, 240, 230));
 		barre_recherche.setBounds(258, 0, 1005, 103);
@@ -487,6 +506,11 @@ public class GUI_home {
 				layeredPane.revalidate();
 			}
 		});
+	}
+
+	protected void setLocation(int i, int j) {
+		// TODO Auto-generated method stub
+		
 	}
 }
  

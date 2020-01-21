@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -18,6 +19,7 @@ public class GUI_inscription extends JFrame {
 
 	private JPanel contentPane;
 	public JButton close;
+	int xx,xy;
 
 	/**
 	 * Launch the application.
@@ -49,9 +51,19 @@ public class GUI_inscription extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel north = new JPanel();
+		north.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				xx = e.getX();
+				xy = e.getY();
+			}
+		});
 		north.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
-			public void mouseDragged(MouseEvent e) {
+			public void mouseDragged(MouseEvent f) {
+				int x = f.getXOnScreen();
+				int y = f.getYOnScreen();
+				GUI_inscription.this.setLocation(x - xx,y -  xy);
 			}
 		});
 		north.setBackground(new Color(255, 165, 0));
