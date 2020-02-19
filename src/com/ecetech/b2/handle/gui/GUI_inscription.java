@@ -3,6 +3,7 @@ package com.ecetech.b2.handle.gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -12,14 +13,21 @@ import java.awt.event.MouseMotionAdapter;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class GUI_inscription extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField passwordField;
+	private JTextField textField;
 	int xx,xy;
 	public JFrame frame;
+	private JPasswordField passwordField_1;
+	private JTextField textField_1;
 	/**
 	 * Launch the application.
 	 */
@@ -43,7 +51,7 @@ public class GUI_inscription extends JFrame {
 	 */
 	public GUI_inscription() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 505, 489);
+		setBounds(100, 100, 505, 625);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -70,6 +78,12 @@ public class GUI_inscription extends JFrame {
 		contentPane.add(north);
 		north.setLayout(null);
 		
+		JLabel lblLoginForm = new JLabel("Inscription");
+		lblLoginForm.setForeground(new Color(240, 248, 255));
+		lblLoginForm.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblLoginForm.setBounds(27, 0, 191, 65);
+		north.add(lblLoginForm);
+		
 		JButton fermer = new JButton("");//
 		fermer.setBackground(new Color(255, 165, 0));
 		fermer.setIcon(new ImageIcon(GUI_inscription.class.getResource("/img/close.png")));
@@ -89,11 +103,95 @@ public class GUI_inscription extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(60, 179, 113));
-		panel_1.setBounds(0, 64, 515, 457);
+		panel_1.setBounds(0, 61, 515, 578);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
+		passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		passwordField.setColumns(10);
+		passwordField.setBackground(new Color(144, 238, 144));
+		passwordField.setBounds(202, 243, 244, 35);
+		panel_1.add(passwordField);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		textField.setColumns(10);
+		textField.setBackground(new Color(144, 238, 144));
+		textField.setBounds(202, 179, 244, 35);
+		panel_1.add(textField);
+		
+		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setForeground(new Color(240, 255, 240));
+		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblPassword.setBounds(60, 243, 129, 35);
+		panel_1.add(lblPassword);
+		
+		JLabel lblUsername = new JLabel("Username:");
+		lblUsername.setForeground(new Color(240, 255, 240));
+		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblUsername.setBounds(60, 179, 129, 35);
+		panel_1.add(lblUsername);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(GUI_connexion.class.getResource("/img/logo handle.PNG")));
+		lblNewLabel.setBounds(184, 10, 122, 150);
+		panel_1.add(lblNewLabel);
+		
+		JLabel lblEmail = new JLabel("Email:");
+		lblEmail.setForeground(new Color(240, 255, 240));
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblEmail.setBounds(60, 376, 129, 35);
+		panel_1.add(lblEmail);
+		
+		passwordField_1 = new JPasswordField();
+		passwordField_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		passwordField_1.setColumns(10);
+		passwordField_1.setBackground(new Color(144, 238, 144));
+		passwordField_1.setBounds(202, 306, 244, 35);
+		panel_1.add(passwordField_1);
+		
+		JLabel lblConfirmPwd = new JLabel("Confirm:");
+		lblConfirmPwd.setForeground(new Color(240, 255, 240));
+		lblConfirmPwd.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblConfirmPwd.setBounds(60, 306, 129, 35);
+		panel_1.add(lblConfirmPwd);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		textField_1.setColumns(10);
+		textField_1.setBackground(new Color(144, 238, 144));
+		textField_1.setBounds(202, 376, 244, 35);
+		panel_1.add(textField_1);
+		
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.setForeground(new Color(245, 245, 245));
+		btnCancel.setBackground(new Color(255, 0, 0));
+		btnCancel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnCancel.setBounds(71, 432, 163, 35);
+		panel_1.add(btnCancel);
+		
+		JButton btnLogin = new JButton("S'inscrire");
+		btnLogin.setBackground(new Color(30, 144, 255));
+		btnLogin.setForeground(new Color(245, 255, 250));
+		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnLogin.setBounds(275, 432, 163, 35);
+		panel_1.add(btnLogin);
+		
+		JButton btnInscription = new JButton("Retour Login");
+		btnInscription.setForeground(new Color(245, 245, 245));
+		btnInscription.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnInscription.setBackground(new Color(0, 139, 139));
+		btnInscription.setBounds(173, 477, 163, 35);
+		panel_1.add(btnInscription);
+		
 		fermer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUI_inscription.this.dispose();
+			}
+		});
+		
+		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GUI_inscription.this.dispose();
 			}
@@ -104,7 +202,14 @@ public class GUI_inscription extends JFrame {
 				setState(GUI_inscription.ICONIFIED);
 			}
 		});
+		
+		btnInscription.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUI_inscription.this.dispose();
+				GUI_connexion f = new GUI_connexion();
+				f.setUndecorated(true);
+				f.setVisible(true);
+			}
+		});
 	}
-	
-
 }

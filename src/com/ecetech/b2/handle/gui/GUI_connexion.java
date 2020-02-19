@@ -194,6 +194,13 @@ public class GUI_connexion extends JFrame {
 				setState(GUI_connexion.ICONIFIED);
 			}
 		});
+		
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUI_connexion.this.dispose();
+			}
+		});
+		
 		btnInscription.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GUI_connexion.this.dispose();
