@@ -1,8 +1,8 @@
 package com.ecetech.b2.handle.gui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -12,19 +12,14 @@ import java.awt.event.MouseMotionAdapter;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class GUI_inscription extends JFrame {
-	
-	private JPanel contentPane;
-	public JButton close;
-	int xx,xy;
-	private JTextField passwordField;
-	private JTextField textField;
 
+	private JPanel contentPane;
+	int xx,xy;
+	public JFrame frame;
 	/**
 	 * Launch the application.
 	 */
@@ -32,7 +27,7 @@ public class GUI_inscription extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI_connexion frame = new GUI_connexion();
+					GUI_inscription frame = new GUI_inscription();
 					frame.setUndecorated(true);
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
@@ -92,12 +87,6 @@ public class GUI_inscription extends JFrame {
 		Reduire.setBorderPainted(false);
 		north.add(Reduire);
 		
-		JLabel lblLoginForm = new JLabel("Login Form");
-		lblLoginForm.setForeground(new Color(240, 248, 255));
-		lblLoginForm.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblLoginForm.setBounds(27, 0, 191, 65);
-		north.add(lblLoginForm);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(60, 179, 113));
 		panel_1.setBounds(0, 64, 515, 457);
@@ -116,4 +105,6 @@ public class GUI_inscription extends JFrame {
 			}
 		});
 	}
+	
+
 }

@@ -37,10 +37,10 @@ public class GUI_connexion extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI_connexion frame = new GUI_connexion();
-					frame.setUndecorated(true);
-					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
+					GUI_connexion frame1 = new GUI_connexion();
+					frame1.setUndecorated(true);
+					frame1.setVisible(true);
+					frame1.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -192,6 +192,14 @@ public class GUI_connexion extends JFrame {
 		Reduire.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setState(GUI_connexion.ICONIFIED);
+			}
+		});
+		btnInscription.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUI_connexion.this.dispose();
+				GUI_inscription f = new GUI_inscription();
+				f.setUndecorated(true);
+				f.setVisible(true);
 			}
 		});
 	}
