@@ -234,6 +234,55 @@ public class GUI_home {
 		aidebutton.setBounds(42, 515, 136, 44);
 		barre_Menu.add(aidebutton);
 		
+		JPanel examen = new JPanel();
+		examen.setBackground(new Color(102, 255, 153));
+		examen.setBounds(0, 0, 1005, 546);
+		layeredPane.add(examen);
+		examen.setLayout(null);
+		
+		
+		// label panel examen examen
+		JLabel lblExamen_1 = new JLabel("EXAMEN");
+		lblExamen_1.setForeground(new Color(0, 51, 51));
+		lblExamen_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblExamen_1.setBounds(440, 36, 185, 47);
+		examen.add(lblExamen_1);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+		label_1.setBounds(957, 504, 38, 32);
+		examen.add(label_1);
+		
+		JLabel lblAfinDetablirVotre = new JLabel("AFIN D'ETABLIR AU MIEUX VOTRE PROFIL ET UN DIAGNOSTIQUE PLUSIEURS QUESTION ");
+		lblAfinDetablirVotre.setForeground(new Color(0, 128, 128));
+		lblAfinDetablirVotre.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblAfinDetablirVotre.setBounds(60, 93, 985, 47);
+		examen.add(lblAfinDetablirVotre);
+		
+		JLabel lblPoserEnFonction = new JLabel("VONT VOUS ETRE POSER EN FONCTION DE VOS REPONSE AU PRECEDENTE QUESTION");
+		lblPoserEnFonction.setForeground(new Color(0, 128, 128));
+		lblPoserEnFonction.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblPoserEnFonction.setBounds(84, 123, 867, 47);
+		examen.add(lblPoserEnFonction);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
+		lblNewLabel_3.setBounds(20, 174, 80, 80);
+		examen.add(lblNewLabel_3);
+		
+		JLabel lblAttentionVosRepo = new JLabel("ATTENTION VOS REPONSES AU QUESTION SONT DETERMINANTE AFIN DE REALISER UN DIAGNOSTIQUE CORRECT !");
+		lblAttentionVosRepo.setForeground(new Color(255, 0, 0));
+		lblAttentionVosRepo.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblAttentionVosRepo.setBounds(110, 190, 921, 47);
+		examen.add(lblAttentionVosRepo);
+		
+		JButton btnNewButton_1 = new JButton("D\u00E9marer l'\u00E9xamen");
+		btnNewButton_1.setForeground(Color.WHITE);
+		btnNewButton_1.setBackground(SystemColor.textHighlight);
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnNewButton_1.setBounds(378, 363, 295, 92);
+		examen.add(btnNewButton_1);
+		
 		// declaration autre panel 
 		
 		JPanel accueil = new JPanel();
@@ -388,48 +437,6 @@ public class GUI_home {
 		label_5.setBounds(94, 137, 50, 60);
 		profil.add(label_5);
 		
-		JPanel examen = new JPanel();
-		examen.setBackground(new Color(102, 255, 153));
-		examen.setBounds(0, 0, 1005, 546);
-		layeredPane.add(examen);
-		examen.setLayout(null);
-		
-		
-		// label panel examen examen
-		JLabel lblExamen_1 = new JLabel("EXAMEN");
-		lblExamen_1.setForeground(new Color(0, 51, 51));
-		lblExamen_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblExamen_1.setBounds(440, 36, 185, 47);
-		examen.add(lblExamen_1);
-		
-		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-		label_1.setBounds(957, 504, 38, 32);
-		examen.add(label_1);
-		
-		JLabel lblAfinDetablirVotre = new JLabel("AFIN D'ETABLIR AU MIEUX VOTRE PROFIL ET UN DIAGNOSTIQUE PLUSIEURS QUESTION ");
-		lblAfinDetablirVotre.setForeground(new Color(0, 128, 128));
-		lblAfinDetablirVotre.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblAfinDetablirVotre.setBounds(60, 93, 985, 47);
-		examen.add(lblAfinDetablirVotre);
-		
-		JLabel lblPoserEnFonction = new JLabel("VONT VOUS ETRE POSER EN FONCTION DE VOS REPONSE AU PRECEDENTE QUESTION");
-		lblPoserEnFonction.setForeground(new Color(0, 128, 128));
-		lblPoserEnFonction.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblPoserEnFonction.setBounds(84, 123, 867, 47);
-		examen.add(lblPoserEnFonction);
-		
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
-		lblNewLabel_3.setBounds(20, 174, 80, 80);
-		examen.add(lblNewLabel_3);
-		
-		JLabel lblAttentionVosRepo = new JLabel("ATTENTION VOS REPONSES AU QUESTION SONT DETERMINANTE AFIN DE REALISER UN DIAGNOSTIQUE CORRECT !");
-		lblAttentionVosRepo.setForeground(new Color(255, 0, 0));
-		lblAttentionVosRepo.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblAttentionVosRepo.setBounds(110, 190, 921, 47);
-		examen.add(lblAttentionVosRepo);
-		
 		JPanel aide = new JPanel();
 		aide.setBackground(new Color(102, 255, 153));
 		aide.setBounds(0, 0, 1005, 546);
@@ -504,6 +511,13 @@ public class GUI_home {
 				layeredPane.add(aide);
 				layeredPane.repaint();
 				layeredPane.revalidate();
+			}
+		});
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Chatbot f = new Chatbot();
+				f.setUndecorated(true);
+				f.setVisible(true);
 			}
 		});
 	}
