@@ -127,6 +127,7 @@ public class Chatbot extends JFrame {
 					if(reponse.toLowerCase().equals("oui")) {
 						txt.append("Bot = Super ! Pouvez vous réaliser ce mouvement? ?\n");
 						mouvement1 f = new mouvement1();
+						f.setUndecorated(true);
 						f.setVisible(true);
 					}
 				}

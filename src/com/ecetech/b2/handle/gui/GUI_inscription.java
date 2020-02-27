@@ -9,25 +9,34 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
+import org.xml.sax.SAXException;
+
+import com.ecetech.b2.handle.beans.Session;
+import com.ecetech.b2.handle.utils.XMLProcessing;
 
 public class GUI_inscription extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField passwordField;
-	private JTextField textField;
+	private JTextField text_passwordField;
+	private JTextField textField_username;
 	int xx,xy;
 	public JFrame frame;
 	private JPasswordField passwordField_1;
-	private JTextField textField_1;
+	private JTextField text_email;
 	/**
 	 * Launch the application.
 	 */
@@ -107,19 +116,19 @@ public class GUI_inscription extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		passwordField = new JPasswordField();
-		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		passwordField.setColumns(10);
-		passwordField.setBackground(new Color(144, 238, 144));
-		passwordField.setBounds(202, 243, 244, 35);
-		panel_1.add(passwordField);
+		text_passwordField = new JPasswordField();
+		text_passwordField.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		text_passwordField.setColumns(10);
+		text_passwordField.setBackground(new Color(144, 238, 144));
+		text_passwordField.setBounds(202, 243, 244, 35);
+		panel_1.add(text_passwordField);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		textField.setColumns(10);
-		textField.setBackground(new Color(144, 238, 144));
-		textField.setBounds(202, 179, 244, 35);
-		panel_1.add(textField);
+		textField_username = new JTextField();
+		textField_username.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		textField_username.setColumns(10);
+		textField_username.setBackground(new Color(144, 238, 144));
+		textField_username.setBounds(202, 179, 244, 35);
+		panel_1.add(textField_username);
 		
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setForeground(new Color(240, 255, 240));
@@ -157,12 +166,12 @@ public class GUI_inscription extends JFrame {
 		lblConfirmPwd.setBounds(60, 306, 129, 35);
 		panel_1.add(lblConfirmPwd);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		textField_1.setColumns(10);
-		textField_1.setBackground(new Color(144, 238, 144));
-		textField_1.setBounds(202, 376, 244, 35);
-		panel_1.add(textField_1);
+		text_email = new JTextField();
+		text_email.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		text_email.setColumns(10);
+		text_email.setBackground(new Color(144, 238, 144));
+		text_email.setBounds(202, 376, 244, 35);
+		panel_1.add(text_email);
 		
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setForeground(new Color(245, 245, 245));
@@ -210,6 +219,36 @@ public class GUI_inscription extends JFrame {
 				f.setUndecorated(true);
 				f.setVisible(true);
 			}
+		});
+		
+		btnLogin.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
+			public void actionPerformed (ActionEvent e) {
+				if(e.getSource()== btnLogin) {
+					String a = textField_username.getText().trim();
+					String b = text_passwordField.getText().trim();
+					String c = text_email.getText().trim();
+					Session newS = new Session(a,b,c);
+					try {
+						XMLProcessing.createNodeAndNewXMLFile("file_sessions.xml",newS);
+						XMLProcessing.createNodeInExistingXMLFile("file_sessions.xml",newS);
+					} catch (ParserConfigurationException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (TransformerException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (SAXException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}					
+				}
+			}
+
+
 		});
 	}
 }

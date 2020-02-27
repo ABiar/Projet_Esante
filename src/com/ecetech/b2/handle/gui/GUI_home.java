@@ -283,6 +283,15 @@ public class GUI_home {
 		btnNewButton_1.setBounds(378, 363, 295, 92);
 		examen.add(btnNewButton_1);
 		
+		JButton choix1 = new JButton("Choix1");
+		choix1.setBounds(133, 407, 85, 21);
+		examen.add(choix1);
+		
+		JLabel imagemouvement = new JLabel("");
+		imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
+		imagemouvement.setBounds(131, 290, 87, 86);
+		examen.add(imagemouvement);
+		
 		// declaration autre panel 
 		
 		JPanel accueil = new JPanel();
@@ -520,11 +529,13 @@ public class GUI_home {
 				f.setVisible(true);
 			}
 		});
-	}
-
-	protected void setLocation(int i, int j) {
-		// TODO Auto-generated method stub
-		
+		choix1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblAfinDetablirVotre.setText("bienvenue monsieur");
+				imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
+				
+			}
+		});
 	}
 }
  
