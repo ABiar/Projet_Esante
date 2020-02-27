@@ -53,7 +53,7 @@ public class Chatbot extends JFrame {
 	 */
 	public Chatbot() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 505, 502);
+		setBounds(100, 100, 593, 502);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -76,14 +76,14 @@ public class Chatbot extends JFrame {
 			}
 		});
 		north.setBackground(new Color(0, 128, 128));
-		north.setBounds(0, 0, 515, 65);
+		north.setBounds(0, 0, 640, 65);
 		contentPane.add(north);
 		north.setLayout(null);
 		
 		JButton fermer = new JButton("");//
 		fermer.setBackground(new Color(255, 165, 0));
 		fermer.setIcon(new ImageIcon(Chatbot.class.getResource("/img/close.png")));
-		fermer.setBounds(441, 10, 40, 45);
+		fermer.setBounds(527, 10, 40, 45);
 		fermer.setContentAreaFilled(false);
 		fermer.setOpaque(false);
 		fermer.setBorderPainted(false);
@@ -91,7 +91,7 @@ public class Chatbot extends JFrame {
 		
 		JButton Reduire = new JButton("");
 		Reduire.setIcon(new ImageIcon(Chatbot.class.getResource("/img/icons8-fl\u00E8che-r\u00E9duire-48.png")));
-		Reduire.setBounds(378, 10, 40, 45);
+		Reduire.setBounds(477, 10, 40, 45);
 		Reduire.setContentAreaFilled(false);
 		Reduire.setOpaque(false);
 		Reduire.setBorderPainted(false);
@@ -109,7 +109,7 @@ public class Chatbot extends JFrame {
 		field.setColumns(10);
 		
 		JTextArea txt = new JTextArea();
-		txt.setBounds(10, 29, 411, 210);
+		txt.setBounds(10, 0, 411, 210);
 		contentPane.add(txt);
 		txt.append("Bot= Pouvez vous réaliser ce mouvement? ?\n"); 
 		
@@ -122,11 +122,16 @@ public class Chatbot extends JFrame {
 				String reponse = field.getText();
 				txt.append("You= "+reponse+"\n");
 				field.setText("");
-				if(reponse.toLowerCase().contains("oui")) {
-					txt.append("Bot = HI BOYS \n");
+				if(reponse.toLowerCase().equals("oui")) {
+					txt.append("Bot = Super ! Pouvez vous réaliser ce mouvement? ?\n");
+					if(reponse.toLowerCase().equals("oui")) {
+						txt.append("Bot = Super ! Pouvez vous réaliser ce mouvement? ?\n");
+						mouvement1 f = new mouvement1();
+						f.setVisible(true);
+					}
 				}
-				else if(reponse.toLowerCase().contains("non")) {
-					txt.append("Bot = Et ce mouvement la pouvez vous le faire ? \n");
+				else if(reponse.toLowerCase().equals("non")) {
+					txt.append("Bot = Mince ! Et ce mouvement la pouvez vous le faire ? \n");
 				}
 				else {
 					txt.append("Bot = Je ne vous ai pas compris \n");
@@ -148,6 +153,10 @@ public class Chatbot extends JFrame {
 		lblVotreRponse.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblVotreRponse.setBounds(27, 346, 411, 52);
 		contentPane.add(lblVotreRponse);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(449, 132, 120, 204);
+		contentPane.add(lblNewLabel_1);
 		
 		fermer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
