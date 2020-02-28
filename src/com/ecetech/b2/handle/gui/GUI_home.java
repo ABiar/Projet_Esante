@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.JLayeredPane;
 import java.awt.Toolkit;
+import javax.swing.JTextArea;
 
 // bonjour augustin
 
@@ -233,6 +234,96 @@ public class GUI_home {
 		aidebutton.setBounds(42, 515, 136, 44);
 		barre_Menu.add(aidebutton);
 		
+		JPanel examen = new JPanel();
+		examen.setBackground(new Color(102, 255, 153));
+		examen.setBounds(0, 0, 1005, 546);
+		layeredPane.add(examen);
+		examen.setLayout(null);
+		
+		
+		// label panel examen examen
+		JLabel titreLblExam = new JLabel("EXAMEN");
+		titreLblExam.setForeground(new Color(0, 51, 51));
+		titreLblExam.setFont(new Font("Tahoma", Font.BOLD, 40));
+		titreLblExam.setBounds(440, 36, 185, 47);
+		examen.add(titreLblExam);
+		
+					
+		JLabel iconeDesc1 = new JLabel("AFIN D'ETABLIR AU MIEUX VOTRE PROFIL ET UN DIAGNOSTIQUE PLUSIEURS QUESTION ");
+		iconeDesc1.setForeground(new Color(0, 128, 128));
+		iconeDesc1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		iconeDesc1.setBounds(60, 93, 985, 47);
+		examen.add(iconeDesc1);
+		
+		JLabel iconeDesc2 = new JLabel("VONT VOUS ETRE POSER EN FONCTION DE VOS REPONSE AU PRECEDENTE QUESTION");
+		iconeDesc2.setForeground(new Color(0, 128, 128));
+		iconeDesc2.setFont(new Font("Tahoma", Font.BOLD, 20));
+		iconeDesc2.setBounds(84, 123, 867, 47);
+		examen.add(iconeDesc2);
+		
+		JLabel iconeAttention = new JLabel("");
+		iconeAttention.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
+		iconeAttention.setBounds(20, 174, 80, 80);
+		examen.add(iconeAttention);
+		
+		JLabel iconeDesc3 = new JLabel("ATTENTION VOS REPONSES AU QUESTION SONT DETERMINANTE AFIN DE REALISER UN DIAGNOSTIQUE CORRECT !");
+		iconeDesc3.setForeground(new Color(255, 0, 0));
+		iconeDesc3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		iconeDesc3.setBounds(110, 190, 921, 47);
+		examen.add(iconeDesc3);
+		
+		JButton btnDemarrerExamen = new JButton("D\u00E9marer l'\u00E9xamen");
+		btnDemarrerExamen.setForeground(Color.WHITE);
+		btnDemarrerExamen.setBackground(SystemColor.textHighlight);
+		btnDemarrerExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnDemarrerExamen.setBounds(378, 363, 295, 92);
+		examen.add(btnDemarrerExamen);
+		
+		JLabel imagemouvement = new JLabel("");
+		imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
+		imagemouvement.setBounds(114, 369, 87, 86);
+		examen.add(imagemouvement);
+		
+		JButton btnOui = new JButton("OUI");
+		btnOui.setBounds(388, 466, 113, 61);
+		examen.add(btnOui);
+		btnOui.setVisible(false);
+		
+		JButton btnNon = new JButton("NON");
+		btnNon.setBounds(546, 466, 113, 61);
+		examen.add(btnNon);
+		btnNon.setVisible(false);
+		
+		JLabel copyright_2 = new JLabel("");
+		copyright_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+		copyright_2.setBounds(957, 504, 38, 32);
+		examen.add(copyright_2);
+		
+		
+		
+		btnDemarrerExamen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnDemarrerExamen.setVisible(false);
+				btnOui.setVisible(true);
+				btnNon.setVisible(true);
+				iconeDesc1.setVisible(false);
+				iconeDesc2.setVisible(false);
+				iconeDesc3.setVisible(false);
+				iconeAttention.setVisible(false);
+			}
+		});
+		btnOui.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				iconeDesc1.setText("bienvenue monsieur");
+				imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
+			}
+		});
+		btnNon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		
 		
 		// declaration autre panel 
 		
@@ -388,69 +479,6 @@ public class GUI_home {
 		copyright.setBounds(957, 504, 38, 32);
 		profil.add(copyright);
 		
-		JPanel examen = new JPanel();
-		examen.setBackground(new Color(102, 255, 153));
-		examen.setBounds(0, 0, 1005, 546);
-		layeredPane.add(examen);
-		examen.setLayout(null);
-		
-		
-		// label panel examen examen
-		JLabel lblExamen_1 = new JLabel("EXAMEN");
-		lblExamen_1.setForeground(new Color(0, 51, 51));
-		lblExamen_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblExamen_1.setBounds(440, 36, 185, 47);
-		examen.add(lblExamen_1);
-		
-		JLabel label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-		label_1.setBounds(957, 504, 38, 32);
-		examen.add(label_1);
-		
-		JLabel lblAfinDetablirVotre = new JLabel("AFIN D'ETABLIR AU MIEUX VOTRE PROFIL ET UN DIAGNOSTIQUE PLUSIEURS QUESTION ");
-		lblAfinDetablirVotre.setForeground(new Color(0, 128, 128));
-		lblAfinDetablirVotre.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblAfinDetablirVotre.setBounds(60, 93, 985, 47);
-		examen.add(lblAfinDetablirVotre);
-		
-		JLabel lblPoserEnFonction = new JLabel("VONT VOUS ETRE POSER EN FONCTION DE VOS REPONSE AU PRECEDENTE QUESTION");
-		lblPoserEnFonction.setForeground(new Color(0, 128, 128));
-		lblPoserEnFonction.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblPoserEnFonction.setBounds(84, 123, 867, 47);
-		examen.add(lblPoserEnFonction);
-		
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
-		lblNewLabel_3.setBounds(20, 174, 80, 80);
-		examen.add(lblNewLabel_3);
-		
-		JLabel lblAttentionVosRepo = new JLabel("ATTENTION VOS REPONSES AU QUESTION SONT DETERMINANTE AFIN DE REALISER UN DIAGNOSTIQUE CORRECT !");
-		lblAttentionVosRepo.setForeground(new Color(255, 0, 0));
-		lblAttentionVosRepo.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblAttentionVosRepo.setBounds(110, 190, 921, 47);
-		examen.add(lblAttentionVosRepo);
-		
-		JButton btnDemarrerExamen = new JButton("D\u00E9marer l'\u00E9xamen");
-		btnDemarrerExamen.setForeground(Color.WHITE);
-		btnDemarrerExamen.setBackground(SystemColor.textHighlight);
-		btnDemarrerExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnDemarrerExamen.setBounds(378, 363, 295, 92);
-		examen.add(btnDemarrerExamen);
-		
-		JLabel imagemouvement = new JLabel("");
-		imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
-		imagemouvement.setBounds(131, 303, 87, 86);
-		examen.add(imagemouvement);
-		
-		JButton btnOui = new JButton("OUI");
-		btnOui.setBounds(388, 466, 113, 61);
-		examen.add(btnOui);
-		btnOui.setVisible(false);
-		
-		JButton btnNon_1 = new JButton("NON");
-		btnNon_1.setBounds(546, 466, 113, 61);
-		examen.add(btnNon_1);
-		
 		JPanel diagnostic = new JPanel();
 		diagnostic.setBackground(new Color(102, 255, 153));
 		diagnostic.setBounds(0, 0, 1005, 546);
@@ -484,25 +512,6 @@ public class GUI_home {
 		lblAide_1.setFont(new Font("Tahoma", Font.BOLD, 40));
 		lblAide_1.setBounds(467, 10, 102, 47);
 		aide.add(lblAide_1);
-		btnNon_1.setVisible(false);
-		btnDemarrerExamen.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				btnDemarrerExamen.setVisible(false);
-				btnOui.setVisible(true);
-				btnNon_1.setVisible(true);
-			}
-		});
-		btnOui.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				lblAfinDetablirVotre.setText("bienvenue monsieur");
-				imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
-			}
-		});
-		btnNon_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		});
 		
 		
 		//action des bouttons present dans le panel 2 permettant la redirection vers les autres panels
@@ -555,4 +564,19 @@ public class GUI_home {
 		});*/
 	}
 }
+
+public class ExamChatBot{
+	
+	 
+	JTextArea textAreaExam = new JTextArea();
+	textAreaExam.setVisible(false);
+	textAreaExam.setTabSize(10);
+	textAreaExam.setBackground(Color.WHITE);
+	textAreaExam.setFont(new Font("Palatino Linotype", Font.BOLD, 20));
+	textAreaExam.setEditable(false);
+	textAreaExam.setBounds(193, 115, 679, 222);
+	textAreaExam.append("Nous allons maintenant réaliser un examen de votre poignet./n");
+	examen.add(textAreaExam);
+}
+
  
