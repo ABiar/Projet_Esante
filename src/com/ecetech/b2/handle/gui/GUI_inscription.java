@@ -231,17 +231,11 @@ public class GUI_inscription extends JFrame {
 					Session newS = new Session(a,b,c);
 					try {
 						XMLProcessing.createNodeAndNewXMLFile("file_sessions.xml",newS);
-						XMLProcessing.createNodeInExistingXMLFile("file_sessions.xml",newS);
+						//XMLProcessing.createNodeInExistingXMLFile("file_sessions.xml",newS);
 					} catch (ParserConfigurationException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					} catch (TransformerException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} catch (SAXException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}					

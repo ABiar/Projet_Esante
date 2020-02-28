@@ -24,6 +24,7 @@ import org.xml.sax.SAXException;
 public class XMLProcessing {
 
 	public static void createNodeInExistingXMLFile(String nameXmlFile, Session newS)
+	
 			throws ParserConfigurationException, TransformerException, SAXException, IOException {
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
@@ -36,19 +37,16 @@ public class XMLProcessing {
 		for (Session i : sess) {
 			Element sessions = document.createElement("session");
 			root.appendChild(sessions);
-
 			Element session = document.createElement("session");
 			session.appendChild(document.createTextNode(i.getUserName()));
 			session.appendChild(document.createTextNode(i.getUserPsw()));
 			session.appendChild(document.createTextNode(i.getUserEmail()));
+			DOMSource source = new DOMSource(document);
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			StreamResult result = new StreamResult("file_sessions.xml");
+			transformer.transform(source, result);
 		}
-
-		DOMSource source = new DOMSource(document);
-
-		TransformerFactory transformerFactory = TransformerFactory.newInstance();
-		Transformer transformer = transformerFactory.newTransformer();
-		StreamResult result = new StreamResult("file_sessions.xml");
-		transformer.transform(source, result);
 	}
 
 

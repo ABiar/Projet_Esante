@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<users xmlns="sessions_handle.com">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><users xmlns="sessions_handle.com">
   <session>
     <name>elian</name>
     <psw>665544</psw>
     <email>elian.agueh@gmail.com</email>
   </session>
-</users>
+<session><name>elian.wolf@gmail.com</name><psw>rabhine</psw><email/></session><session><name>sammy</name><psw>rabhine</psw><email>elian.wolf@gmail.com</email></session><session><name>sammy</name><psw>rabhine</psw><email>elian.wolf@gmail.com</email></session></users>
