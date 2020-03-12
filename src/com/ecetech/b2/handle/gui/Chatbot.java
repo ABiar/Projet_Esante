@@ -155,9 +155,16 @@ public class Chatbot extends JFrame {
 					break;
 				// Case ou en deux il répond oui
 				case 3:
+					if (reponse.toLowerCase().equals("oui")) {
+						txt.append("Alvi = réponse oui");
+					} else if (reponse.toLowerCase().equals("non")) {
+						txt.append("Alvi =reponse non\n");
+						level++;
+					}
 					break;
 				// Case ou en deux il répond non
 				case 4:
+					txt.append("Alvi = reponse non \n");
 					break;
 				case 5:
 					break;
