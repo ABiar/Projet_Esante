@@ -36,6 +36,10 @@ public class GUI_home {
 	private JTextField textField_nom;
 	private JTextField textField_age;
 	private JTextField textField_profession;
+	private JButton btnOui;
+	private JLabel iconeDesc1;
+	private JLabel imagemouvement;
+	private JLabel iconeDesc3;
 	int xx,xy;
 	/**
 	 * Launch the application.
@@ -279,50 +283,67 @@ public class GUI_home {
 		btnDemarrerExamen.setBounds(378, 363, 295, 92);
 		examen.add(btnDemarrerExamen);
 		
-		JLabel imagemouvement = new JLabel("");
-		imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
-		imagemouvement.setBounds(114, 369, 87, 86);
-		examen.add(imagemouvement);
+//		JLabel imagemouvement = new JLabel("");
+//		imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
+//		imagemouvement.setBounds(114, 369, 87, 86);
+//		examen.add(imagemouvement);
 		
-		JButton btnOui = new JButton("OUI");
-		btnOui.setBounds(388, 466, 113, 61);
-		examen.add(btnOui);
-		btnOui.setVisible(false);
-		
-		JButton btnNon = new JButton("NON");
-		btnNon.setBounds(546, 466, 113, 61);
-		examen.add(btnNon);
-		btnNon.setVisible(false);
+//		JButton btnOui = new JButton("OUI");
+//		btnOui.setBounds(388, 466, 113, 61);
+//		examen.add(btnOui);
+//		btnOui.setVisible(false);
+//		
+//		JButton btnNon = new JButton("NON");
+//		btnNon.setBounds(546, 466, 113, 61);
+//		examen.add(btnNon);
+//		btnNon.setVisible(false);
 		
 		JLabel copyright_2 = new JLabel("");
 		copyright_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
 		copyright_2.setBounds(957, 504, 38, 32);
 		examen.add(copyright_2);
-		
-		
-		
+
 		btnDemarrerExamen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnDemarrerExamen.setVisible(false);
-				btnOui.setVisible(true);
-				btnNon.setVisible(true);
-				iconeDesc1.setVisible(false);
-				iconeDesc2.setVisible(false);
-				iconeDesc3.setVisible(false);
-				iconeAttention.setVisible(false);
+				Chatbot frame = new Chatbot();
+				frame.setUndecorated(true);
+				frame.setVisible(true);
+				frame.setLocationRelativeTo(null);
 			}
 		});
-		btnOui.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				iconeDesc1.setText("bienvenue monsieur");
-				imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
-			}
-		});
-		btnNon.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		});
+		
+//		btnOui.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				iconeDesc1.setText("bienvenue monsieur");
+//				imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
+//				iconeDesc3.setText("Question 2 : Pouvez vous réaliser ce mouvement? ?");
+//				btnOui.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						iconeDesc1.setText("Il semblerait que cela soit un probleme au niveau de votre articulation");
+//						imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
+//						iconeDesc3.setText("Question 3:Pouvez faire ce mouvement la ?");
+//						
+//					}
+//				});
+//				btnNon.addActionListener(new ActionListener() {
+//					public void actionPerformed(ActionEvent e) {
+//						iconeDesc1.setText("bienvenue monsieur");
+//						imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
+//						iconeDesc3.setText("Question 3: avez vous beaucoup mal");
+//						
+//					}
+//				});
+//				
+//			}
+//		});
+//		btnNon.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				
+//			}
+//		});
+		
+		
+
 		
 		
 		// declaration autre panel 
@@ -555,28 +576,9 @@ public class GUI_home {
 				layeredPane.revalidate();
 			}
 		});
-		/*btnDemarrerExamen.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Chatbot f = new Chatbot();
-				f.setUndecorated(true);
-				f.setVisible(true);
-			}
-		});*/
 	}
 }
 
-public class ExamChatBot{
-	
-	 
-	JTextArea textAreaExam = new JTextArea();
-	textAreaExam.setVisible(false);
-	textAreaExam.setTabSize(10);
-	textAreaExam.setBackground(Color.WHITE);
-	textAreaExam.setFont(new Font("Palatino Linotype", Font.BOLD, 20));
-	textAreaExam.setEditable(false);
-	textAreaExam.setBounds(193, 115, 679, 222);
-	textAreaExam.append("Nous allons maintenant réaliser un examen de votre poignet./n");
-	examen.add(textAreaExam);
-}
+
 
  

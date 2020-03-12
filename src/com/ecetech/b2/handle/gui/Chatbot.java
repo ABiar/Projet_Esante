@@ -53,7 +53,7 @@ public class Chatbot extends JFrame {
 	 */
 	public Chatbot() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 593, 502);
+		setBounds(100, 100, 617, 502);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -108,10 +108,15 @@ public class Chatbot extends JFrame {
 		contentPane.add(field);
 		field.setColumns(10);
 		
+		JLabel image = new JLabel("");
+		image.setIcon(new ImageIcon(Chatbot.class.getResource("/img/corpsbioflash.png")));
+		image.setBounds(449, 75, 154, 361);
+		contentPane.add(image);
+		
 		JTextArea txt = new JTextArea();
 		txt.setBounds(10, 0, 411, 210);
 		contentPane.add(txt);
-		txt.append("Bot= Pouvez vous réaliser ce mouvement? ?\n"); 
+		txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n"); 
 		
 		JScrollPane pane = new JScrollPane(txt, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		pane.setBounds(28, 126, 411, 210);
@@ -123,16 +128,22 @@ public class Chatbot extends JFrame {
 				txt.append("You= "+reponse+"\n");
 				field.setText("");
 				if(reponse.toLowerCase().equals("oui")) {
-					txt.append("Bot = Super ! Pouvez vous réaliser ce mouvement? ?\n");
-					if(reponse.toLowerCase().equals("oui")) {
-						txt.append("Bot = Super ! Pouvez vous réaliser ce mouvement? ?\n");
+					txt.append("Alvi = Observez vous la présence d'un Oedeme de ce type ?\n");
+					image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
+					String reponse1 = field.getText();
+					field.setText("");
+					if(reponse1.toLowerCase().equals("oui")) {
+						txt.append("Alvi = Observez vous la présence d'un de ces SYmpthomes\n");
+					}
+					else if(reponse1.toLowerCase().equals("non")) {
+						txt.append("Alvi = Mince ! Et ce mouvement la pouvez vous le faire ? \n");
 						mouvement1 f = new mouvement1();
 						f.setUndecorated(true);
 						f.setVisible(true);
 					}
 				}
 				else if(reponse.toLowerCase().equals("non")) {
-					txt.append("Bot = Mince ! Et ce mouvement la pouvez vous le faire ? \n");
+					txt.append("Bot = Mince ! Nous ne pouvons pas vous aider \n");
 				}
 				else {
 					txt.append("Bot = Je ne vous ai pas compris \n");
@@ -155,9 +166,6 @@ public class Chatbot extends JFrame {
 		lblVotreRponse.setBounds(27, 346, 411, 52);
 		contentPane.add(lblVotreRponse);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(449, 132, 120, 204);
-		contentPane.add(lblNewLabel_1);
 		
 		fermer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

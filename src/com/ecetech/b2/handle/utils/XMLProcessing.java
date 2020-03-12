@@ -19,6 +19,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class XMLProcessing {
@@ -92,6 +93,70 @@ public class XMLProcessing {
 		node.appendChild(doc.createTextNode(value));
 
 		return node;
+	}
+	public static boolean verifUserInXmlFile(String user, String psw) {
+
+		boolean result_verif = false;
+		try {
+
+			File file = new File("session.xml");
+			DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			Document doc = dBuilder.parse(file);
+			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+			if (doc.hasChildNodes()) {
+				result_verif = verfiXMLNodes(user, psw, doc.getChildNodes());
+			}
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return result_verif;
+	}
+
+	/**
+	 * 
+	 * @param user
+	 * @param psw
+	 * @param childNodes
+	 * @return
+	 * @throws Exception
+	 */
+	private static boolean verfiXMLNodes(String user, String psw, NodeList childNodes) throws Exception {
+		File fXmlFile = new File("session.xml");
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+		Document doc = dBuilder.parse(fXmlFile);
+
+		// optional, but recommended
+		// read this -
+		// http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+		doc.getDocumentElement().normalize();
+
+		System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+
+		NodeList nList = doc.getElementsByTagName("session");
+
+		System.out.println("----------------------------");
+
+		for (int temp = 0; temp < nList.getLength(); temp++) {
+
+			Node nNode = nList.item(temp);
+
+			System.out.println("\nCurrent Element :" + nNode.getNodeName());
+
+			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+				Element eElement = (Element) nNode;
+				System.out.println("Email : " + eElement.getAttribute("email"));
+				System.out.println("Name : " + eElement.getElementsByTagName("name").item(0).getTextContent());
+				System.out.println("Psw : " + eElement.getElementsByTagName("psw").item(0).getTextContent());
+
+				if (eElement.getElementsByTagName("name").item(0).getTextContent().equals(user)
+						&& eElement.getElementsByTagName("psw").item(0).getTextContent().equals(psw)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 }

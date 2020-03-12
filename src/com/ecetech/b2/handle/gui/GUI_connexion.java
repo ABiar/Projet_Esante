@@ -10,6 +10,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
+
+import com.ecetech.b2.handle.utils.XMLProcessing;
+
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
@@ -160,27 +163,25 @@ public class GUI_connexion extends JFrame {
 		panel_1.add(btnInscription);
 		
 		btnLogin.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
-			public void actionPerformed (ActionEvent e) {
-				if(e.getSource()== btnLogin) {
-					String a = textField.getText().trim();
-					String b = passwordField.getText().trim();
-					if (a.equals("elian") && b.equals("1234"))
-					{
-						JOptionPane.showMessageDialog(null, "Connexion reussi");
-						GUI_connexion.this.dispose();
-						GUI_home window = new GUI_home();
-						window.framebis.setVisible(true);
+			public void actionPerformed(ActionEvent arg0) {
+					String username = textField.getText();
+					@SuppressWarnings("deprecation")
+					String psw = passwordField.getText();
+					if(XMLProcessing.verifUserInXmlFile(username,psw)) {
+						try {	
+							GUI_connexion.this.dispose();
+							GUI_home window = new GUI_home();
+							window.framebis.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						
 					}
-					else
-					{
-						JOptionPane.showMessageDialog(null, "Mauvais identifiant ou mot de passe");
+					else {
+						JOptionPane.showMessageDialog(null, "Connection error", "Error", JOptionPane.ERROR_MESSAGE);
 					}
-					
-				}
+				
 			}
-
-
 		});
 		
 		fermer.addActionListener(new ActionListener() {
