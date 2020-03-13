@@ -198,7 +198,7 @@ public class Chatbot extends JFrame {
 				}
 			}
 		});
-
+        /////
 		JLabel lblQuestion = new JLabel("Question");
 		lblQuestion.setForeground(SystemColor.textHighlight);
 		lblQuestion.setFont(new Font("Tahoma", Font.PLAIN, 25));
