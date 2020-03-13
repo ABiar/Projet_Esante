@@ -28,7 +28,7 @@ public class Chatbot extends JFrame {
 	private JPanel contentPane;
 	int xx, xy;
 	private JTextField field;
-	private static int level = 0;
+	private static int level = 1;
 	private static Chatbot frame;
 	
 
