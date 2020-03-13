@@ -125,6 +125,8 @@ public class Chatbot extends JFrame {
 		pane.setBounds(28, 126, 411, 210);
 		getContentPane().add(pane);
 
+		
+		/// Chatbot pour le diagnostic
 		field.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String reponse = field.getText();
