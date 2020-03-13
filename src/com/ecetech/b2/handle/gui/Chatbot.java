@@ -127,13 +127,14 @@ public class Chatbot extends JFrame {
 
 		field.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				level = level + 1; // mise à jour au fur et à mesure
 				String reponse = field.getText();
+				field.setText("");
 				switch (level) {
 				case 1:
 					if (reponse.toLowerCase().equals("oui")) {
 						txt.append("Alvi = Observez vous la présence d'un Oedeme de ce type ?\n");
 						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
+						level = 2;
 					} else if (reponse.toLowerCase().equals("non")) {
 						txt.append("Alvi = Mince ! Nous ne pouvons pas vous aider \n");
 						frame.dispose();
@@ -147,19 +148,21 @@ public class Chatbot extends JFrame {
 					break;
 				case 2:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Observez vous la présence d'un de ces SYmpthomes\n");
+						txt.append("Alvi = Observez vous la présence d'un de ces Sympthomes\n");
+						level = 3;
 					} else if (reponse.toLowerCase().equals("non")) {
 						txt.append("Alvi = Mince ! Et ce mouvement la pouvez vous le faire ? \n");
-						level++;
+						level = 4;
 					}
 					break;
 				// Case ou en deux il répond oui
 				case 3:
 					if (reponse.toLowerCase().equals("oui")) {
 						txt.append("Alvi = réponse oui");
+						level = 5;
 					} else if (reponse.toLowerCase().equals("non")) {
 						txt.append("Alvi =reponse non\n");
-						level++;
+						level = 6;
 					}
 					break;
 				// Case ou en deux il répond non
@@ -173,6 +176,22 @@ public class Chatbot extends JFrame {
 				case 7:
 					break;
 				case 8:
+					break;
+				case 9:
+					break;
+				case 10:
+					break;
+				case 11:
+					break;
+				case 12:
+					break;
+				case 13:
+					break;
+				case 14:
+					break;
+				case 15:
+					break;
+				case 16:
 					break;
 				}
 			}
