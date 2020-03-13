@@ -1,6 +1,5 @@
 package com.ecetech.b2.handle.gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +17,6 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.UIManager;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 

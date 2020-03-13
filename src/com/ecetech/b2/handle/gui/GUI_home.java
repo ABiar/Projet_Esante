@@ -7,10 +7,6 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
-import java.awt.CardLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,39 +14,25 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
-import javax.swing.UIManager;
 import javax.swing.JLayeredPane;
 import java.awt.Toolkit;
-import javax.swing.JTextArea;
 
-// bonjour augustin
 
 public class GUI_home {
 
 	public JFrame framebis;
-	private JTextField textField;
-	private JTextField textField_ID;
-	private JTextField textField_mdp;
-	private JTextField textField_email;
-	private JTextField textField_prenom;
-	private JTextField textField_nom;
-	private JTextField textField_age;
-	private JTextField textField_profession;
-	private JButton btnOui;
-	private JLabel iconeDesc1;
-	private JLabel imagemouvement;
-	private JLabel iconeDesc3;
+	
 	int xx,xy;
 	/**
 	 * Launch the application.
 	 */
-	//// bonjour elian
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					GUI_home window = new GUI_home();
 					window.framebis.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -69,7 +51,11 @@ public class GUI_home {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		
+		
 		//creation et paramettrage de la fenetre principal
+		
 		
 		framebis = new JFrame();
 		framebis.setResizable(false);
@@ -88,21 +74,6 @@ public class GUI_home {
 		
 		// declaration panel qui ne bouge pas gauche menu et en haut barre de recherche
 		JPanel barre_recherche = new JPanel();
-		/*barre_recherche.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				xx = e.getX();
-				xy = e.getY();
-			}
-		});
-		barre_recherche.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseDragged(MouseEvent f) {
-				int x = f.getXOnScreen();
-				int y = f.getYOnScreen();
-				GUI_home.this.setLocation(x - xx,y -  xy);
-			}
-		});*/
 		barre_recherche.setBackground(new Color(102, 205, 170));
 		barre_recherche.setForeground(new Color(250, 240, 230));
 		barre_recherche.setBounds(258, 0, 1005, 103);
@@ -119,6 +90,7 @@ public class GUI_home {
 		
 		//Barre de recherche
 		
+		JTextField textField;
 		textField = new JTextField();
 		textField.setBounds(888, 37, 107, 19);
 		barre_recherche.add(textField);
@@ -238,114 +210,6 @@ public class GUI_home {
 		aidebutton.setBounds(42, 515, 136, 44);
 		barre_Menu.add(aidebutton);
 		
-		JPanel examen = new JPanel();
-		examen.setBackground(new Color(102, 255, 153));
-		examen.setBounds(0, 0, 1005, 546);
-		layeredPane.add(examen);
-		examen.setLayout(null);
-		
-		
-		// label panel examen examen
-		JLabel titreLblExam = new JLabel("EXAMEN");
-		titreLblExam.setForeground(new Color(0, 51, 51));
-		titreLblExam.setFont(new Font("Tahoma", Font.BOLD, 40));
-		titreLblExam.setBounds(440, 36, 185, 47);
-		examen.add(titreLblExam);
-		
-					
-		JLabel iconeDesc1 = new JLabel("AFIN D'ETABLIR AU MIEUX VOTRE PROFIL ET UN DIAGNOSTIQUE PLUSIEURS QUESTION ");
-		iconeDesc1.setForeground(new Color(0, 128, 128));
-		iconeDesc1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		iconeDesc1.setBounds(60, 93, 985, 47);
-		examen.add(iconeDesc1);
-		
-		JLabel iconeDesc2 = new JLabel("VONT VOUS ETRE POSER EN FONCTION DE VOS REPONSE AU PRECEDENTE QUESTION");
-		iconeDesc2.setForeground(new Color(0, 128, 128));
-		iconeDesc2.setFont(new Font("Tahoma", Font.BOLD, 20));
-		iconeDesc2.setBounds(84, 123, 867, 47);
-		examen.add(iconeDesc2);
-		
-		JLabel iconeAttention = new JLabel("");
-		iconeAttention.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
-		iconeAttention.setBounds(20, 174, 80, 80);
-		examen.add(iconeAttention);
-		
-		JLabel iconeDesc3 = new JLabel("ATTENTION VOS REPONSES AU QUESTION SONT DETERMINANTE AFIN DE REALISER UN DIAGNOSTIQUE CORRECT !");
-		iconeDesc3.setForeground(new Color(255, 0, 0));
-		iconeDesc3.setFont(new Font("Tahoma", Font.BOLD, 15));
-		iconeDesc3.setBounds(110, 190, 921, 47);
-		examen.add(iconeDesc3);
-		
-		JButton btnDemarrerExamen = new JButton("D\u00E9marer l'\u00E9xamen");
-		btnDemarrerExamen.setForeground(Color.WHITE);
-		btnDemarrerExamen.setBackground(SystemColor.textHighlight);
-		btnDemarrerExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnDemarrerExamen.setBounds(378, 363, 295, 92);
-		examen.add(btnDemarrerExamen);
-		
-//		JLabel imagemouvement = new JLabel("");
-//		imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
-//		imagemouvement.setBounds(114, 369, 87, 86);
-//		examen.add(imagemouvement);
-		
-//		JButton btnOui = new JButton("OUI");
-//		btnOui.setBounds(388, 466, 113, 61);
-//		examen.add(btnOui);
-//		btnOui.setVisible(false);
-//		
-//		JButton btnNon = new JButton("NON");
-//		btnNon.setBounds(546, 466, 113, 61);
-//		examen.add(btnNon);
-//		btnNon.setVisible(false);
-		
-		JLabel copyright_2 = new JLabel("");
-		copyright_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-		copyright_2.setBounds(957, 504, 38, 32);
-		examen.add(copyright_2);
-
-		btnDemarrerExamen.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Chatbot frame = new Chatbot();
-				frame.setUndecorated(true);
-				frame.setVisible(true);
-				frame.setLocationRelativeTo(null);
-			}
-		});
-		
-//		btnOui.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				iconeDesc1.setText("bienvenue monsieur");
-//				imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
-//				iconeDesc3.setText("Question 2 : Pouvez vous réaliser ce mouvement? ?");
-//				btnOui.addActionListener(new ActionListener() {
-//					public void actionPerformed(ActionEvent e) {
-//						iconeDesc1.setText("Il semblerait que cela soit un probleme au niveau de votre articulation");
-//						imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
-//						iconeDesc3.setText("Question 3:Pouvez faire ce mouvement la ?");
-//						
-//					}
-//				});
-//				btnNon.addActionListener(new ActionListener() {
-//					public void actionPerformed(ActionEvent e) {
-//						iconeDesc1.setText("bienvenue monsieur");
-//						imagemouvement.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
-//						iconeDesc3.setText("Question 3: avez vous beaucoup mal");
-//						
-//					}
-//				});
-//				
-//			}
-//		});
-//		btnNon.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent arg0) {
-//				
-//			}
-//		});
-		
-		
-
-		
-		
 		// declaration autre panel 
 		
 		JPanel accueil = new JPanel();
@@ -403,7 +267,7 @@ public class GUI_home {
 		layeredPane.add(profil);
 		profil.setLayout(null);
 		
-		// label panel profil profil
+		// label panel profil
 		JLabel lblTitre = new JLabel("PROFIL");
 		lblTitre.setForeground(new Color(0, 51, 51));
 		lblTitre.setFont(new Font("Tahoma", Font.BOLD, 40));
@@ -415,7 +279,9 @@ public class GUI_home {
 		lblIdentifiant.setBounds(157, 111, 141, 47);
 		profil.add(lblIdentifiant);
 		
+		JTextField textField_ID;
 		textField_ID = new JTextField();
+		textField_ID.setVisible(false);
 		textField_ID.setBounds(157, 157, 194, 19);
 		profil.add(textField_ID);
 		textField_ID.setColumns(10);
@@ -425,7 +291,9 @@ public class GUI_home {
 		lblMotDePasse.setBounds(157, 186, 162, 47);
 		profil.add(lblMotDePasse);
 		
+		JTextField textField_mdp;
 		textField_mdp = new JTextField();
+		textField_mdp.setVisible(false);
 		textField_mdp.setColumns(10);
 		textField_mdp.setBounds(157, 232, 194, 19);
 		profil.add(textField_mdp);
@@ -435,7 +303,9 @@ public class GUI_home {
 		lblEmail.setBounds(157, 261, 141, 47);
 		profil.add(lblEmail);
 		
+		JTextField textField_email;
 		textField_email = new JTextField();
+		textField_email.setVisible(false);
 		textField_email.setColumns(10);
 		textField_email.setBounds(157, 307, 194, 19);
 		profil.add(textField_email);
@@ -445,7 +315,9 @@ public class GUI_home {
 		lblPrenom.setBounds(587, 111, 141, 47);
 		profil.add(lblPrenom);
 		
+		JTextField textField_prenom;
 		textField_prenom = new JTextField();
+		textField_prenom.setVisible(false);
 		textField_prenom.setColumns(10);
 		textField_prenom.setBounds(587, 157, 194, 19);
 		profil.add(textField_prenom);
@@ -455,7 +327,9 @@ public class GUI_home {
 		lblNom.setBounds(587, 186, 162, 47);
 		profil.add(lblNom);
 		
+		JTextField textField_nom;
 		textField_nom = new JTextField();
+		textField_nom.setVisible(false);
 		textField_nom.setColumns(10);
 		textField_nom.setBounds(587, 232, 194, 19);
 		profil.add(textField_nom);
@@ -465,7 +339,9 @@ public class GUI_home {
 		lblAge.setBounds(587, 261, 141, 47);
 		profil.add(lblAge);
 		
+		JTextField textField_age;
 		textField_age = new JTextField();
+		textField_age.setVisible(false);
 		textField_age.setColumns(10);
 		textField_age.setBounds(587, 307, 194, 19);
 		profil.add(textField_age);
@@ -475,7 +351,9 @@ public class GUI_home {
 		lblProfession.setBounds(587, 336, 141, 47);
 		profil.add(lblProfession);
 		
+		JTextField textField_profession;
 		textField_profession = new JTextField();
+		textField_profession.setVisible(false);
 		textField_profession.setColumns(10);
 		textField_profession.setBounds(587, 382, 194, 19);
 		profil.add(textField_profession);
@@ -500,39 +378,98 @@ public class GUI_home {
 		copyright.setBounds(957, 504, 38, 32);
 		profil.add(copyright);
 		
-		JPanel diagnostic = new JPanel();
-		diagnostic.setBackground(new Color(102, 255, 153));
-		diagnostic.setBounds(0, 0, 1005, 546);
-		layeredPane.add(diagnostic);
-		diagnostic.setLayout(null);
+		JPanel examen = new JPanel();
+		examen.setBackground(new Color(102, 255, 153));
+		examen.setBounds(0, 0, 1005, 546);
+		layeredPane.add(examen);
+		examen.setLayout(null);
 		
-		JLabel label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-		label_2.setBounds(957, 504, 38, 32);
-		diagnostic.add(label_2);
 		
-		JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
-		lblDiagnostique_1.setForeground(new Color(0, 51, 51));
-		lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblDiagnostique_1.setBounds(363, 10, 330, 47);
-		diagnostic.add(lblDiagnostique_1);
+		// label panel examen examen
+		JLabel titreLblExam = new JLabel("EXAMEN");
+		titreLblExam.setForeground(new Color(0, 51, 51));
+		titreLblExam.setFont(new Font("Tahoma", Font.BOLD, 40));
+		titreLblExam.setBounds(440, 36, 185, 47);
+		examen.add(titreLblExam);
 		
-		JPanel aide = new JPanel();
-		aide.setBackground(new Color(102, 255, 153));
-		aide.setBounds(0, 0, 1005, 546);
-		layeredPane.add(aide);
-		aide.setLayout(null);
+					
+		JLabel iconeDesc1 = new JLabel("AFIN D'ETABLIR AU MIEUX VOTRE PROFIL ET UN DIAGNOSTIQUE PLUSIEURS QUESTION ");
+		iconeDesc1.setForeground(new Color(0, 128, 128));
+		iconeDesc1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		iconeDesc1.setBounds(60, 93, 985, 47);
+		examen.add(iconeDesc1);
 		
-		JLabel label_3 = new JLabel("");
-		label_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-		label_3.setBounds(957, 504, 38, 32);
-		aide.add(label_3);
+		JLabel iconeDesc2 = new JLabel("VONT VOUS ETRE POSER EN FONCTION DE VOS REPONSE AU PRECEDENTE QUESTION");
+		iconeDesc2.setForeground(new Color(0, 128, 128));
+		iconeDesc2.setFont(new Font("Tahoma", Font.BOLD, 20));
+		iconeDesc2.setBounds(84, 123, 867, 47);
+		examen.add(iconeDesc2);
 		
-		JLabel lblAide_1 = new JLabel("AIDE");
-		lblAide_1.setForeground(new Color(0, 51, 51));
-		lblAide_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblAide_1.setBounds(467, 10, 102, 47);
-		aide.add(lblAide_1);
+		JLabel iconeAttention = new JLabel("");
+		iconeAttention.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
+		iconeAttention.setBounds(20, 174, 80, 80);
+		examen.add(iconeAttention);
+		
+		JLabel iconeDesc3 = new JLabel("ATTENTION VOS REPONSES AU QUESTION SONT DETERMINANTE AFIN DE REALISER UN DIAGNOSTIQUE CORRECT !");
+		iconeDesc3.setForeground(new Color(255, 0, 0));
+		iconeDesc3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		iconeDesc3.setBounds(110, 190, 921, 47);
+		examen.add(iconeDesc3);
+		
+		JButton btnDemarrerExamen = new JButton("D\u00E9marer l'\u00E9xamen");
+		btnDemarrerExamen.setForeground(Color.WHITE);
+		btnDemarrerExamen.setBackground(SystemColor.textHighlight);
+		btnDemarrerExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnDemarrerExamen.setBounds(378, 363, 295, 92);
+		examen.add(btnDemarrerExamen);
+		
+				JLabel copyright_2 = new JLabel("");
+				copyright_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+				copyright_2.setBounds(957, 504, 38, 32);
+				examen.add(copyright_2);
+				
+				JPanel diagnostic = new JPanel();
+				diagnostic.setBackground(new Color(102, 255, 153));
+				diagnostic.setBounds(0, 0, 1005, 546);
+				layeredPane.add(diagnostic);
+				diagnostic.setLayout(null);
+				
+				JLabel label_2 = new JLabel("");
+				label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+				label_2.setBounds(957, 504, 38, 32);
+				diagnostic.add(label_2);
+				
+				JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
+				lblDiagnostique_1.setForeground(new Color(0, 51, 51));
+				lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+				lblDiagnostique_1.setBounds(363, 10, 330, 47);
+				diagnostic.add(lblDiagnostique_1);
+				
+				JPanel aide = new JPanel();
+				aide.setBackground(new Color(102, 255, 153));
+				aide.setBounds(0, 0, 1005, 546);
+				layeredPane.add(aide);
+				aide.setLayout(null);
+				
+				JLabel label_3 = new JLabel("");
+				label_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+				label_3.setBounds(957, 504, 38, 32);
+				aide.add(label_3);
+				
+				JLabel lblAide_1 = new JLabel("AIDE");
+				lblAide_1.setForeground(new Color(0, 51, 51));
+				lblAide_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+				lblAide_1.setBounds(467, 10, 102, 47);
+				aide.add(lblAide_1);
+				
+						btnDemarrerExamen.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								Chatbot frame = new Chatbot();
+								frame.setUndecorated(true);
+								frame.setVisible(true);
+								frame.setLocationRelativeTo(null);
+							}
+						});
 		
 		
 		//action des bouttons present dans le panel 2 permettant la redirection vers les autres panels
@@ -550,6 +487,13 @@ public class GUI_home {
 				layeredPane.add(profil);
 				layeredPane.repaint();
 				layeredPane.revalidate();
+				textField_prenom.setVisible(true);
+				textField_ID.setVisible(true);
+				textField_nom.setVisible(true);
+				textField_email.setVisible(true);
+				textField_age.setVisible(true);
+				textField_profession.setVisible(true);
+				textField_mdp.setVisible(true);
 			}
 		});
 		examenbutton.addActionListener(new ActionListener() {

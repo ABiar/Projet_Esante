@@ -28,9 +28,9 @@ public class Chatbot extends JFrame {
 	private JPanel contentPane;
 	int xx, xy;
 	private JTextField field;
-	private String question1;
 	private static int level = 0;
 	private static Chatbot frame;
+	
 
 	/**
 	 * Launch the application.
@@ -150,7 +150,7 @@ public class Chatbot extends JFrame {
 					break;
 				case 2:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Observez vous la présence d'un de ces Sympthomes\n");
+						txt.append("Alvi = Observez vous la présence d'un de ces Sympthomes ? \n");
 						level = 3;
 					} else if (reponse.toLowerCase().equals("non")) {
 						txt.append("Alvi = Mince ! Et ce mouvement la pouvez vous le faire ? \n");
