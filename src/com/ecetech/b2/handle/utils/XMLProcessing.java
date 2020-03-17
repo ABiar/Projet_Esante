@@ -99,7 +99,7 @@ public class XMLProcessing {
 		boolean result_verif = false;
 		try {
 
-			File file = new File("session.xml");
+			File file = new File("file_sessions.xml");
 			DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			Document doc = dBuilder.parse(file);
 			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
@@ -122,7 +122,7 @@ public class XMLProcessing {
 	 * @throws Exception
 	 */
 	private static boolean verfiXMLNodes(String user, String psw, NodeList childNodes) throws Exception {
-		File fXmlFile = new File("session.xml");
+		File fXmlFile = new File("file_sessions.xml");
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		Document doc = dBuilder.parse(fXmlFile);
