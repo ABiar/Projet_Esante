@@ -104,6 +104,30 @@ public class Chatbot extends JFrame {
 		lblNewLabel.setBounds(10, 0, 123, 65);
 		north.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		
+		JLabel lblQuestion = new JLabel("Question");
+		lblQuestion.setForeground(SystemColor.textHighlight);
+		lblQuestion.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblQuestion.setBounds(28, 64, 411, 52);
+		contentPane.add(lblQuestion);
+
+		JLabel lblVotreRponse = new JLabel("Votre R\u00E9ponse");
+		lblVotreRponse.setForeground(SystemColor.textHighlight);
+		lblVotreRponse.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblVotreRponse.setBounds(27, 346, 411, 52);
+		contentPane.add(lblVotreRponse);
+		
+		JLabel image1 = new JLabel("");
+		image1.setBounds(449, 75, 144, 116);
+		contentPane.add(image1);
+		
+		JLabel image2 = new JLabel("");
+		image2.setBounds(449, 220, 144, 116);
+		contentPane.add(image2);
+		
+		JLabel image3 = new JLabel("");
+		image3.setBounds(449, 346, 144, 116);
+		contentPane.add(image3);
 
 		field = new JTextField();
 		field.setBounds(28, 400, 411, 36);
@@ -121,7 +145,7 @@ public class Chatbot extends JFrame {
 		txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n");
 
 		JScrollPane pane = new JScrollPane(txt, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		pane.setBounds(28, 126, 411, 210);
 		getContentPane().add(pane);
 
@@ -130,12 +154,13 @@ public class Chatbot extends JFrame {
 		field.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String reponse = field.getText();
+				txt.append("You = " + reponse + "\n");
 				field.setText("");
 				switch (level) {
 				case 1:
 					if (reponse.toLowerCase().equals("oui")) {
 						txt.append("Alvi = Observez vous la présence d'un Oedeme de ce type ?\n");
-						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/close.png")));
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/douleur-poignet-200x300.jpg")));
 						level = 2;
 					} else if (reponse.toLowerCase().equals("non")) {
 						txt.append("Alvi = Mince ! Nous ne pouvons pas vous aider \n");
@@ -151,31 +176,88 @@ public class Chatbot extends JFrame {
 				case 2:
 					if (reponse.toLowerCase().equals("oui")) {
 						txt.append("Alvi = Observez vous la présence d'un de ces Sympthomes ? \n");
+						txt.append("Alvi =  Entrez : /1/ pour Difformité \n");
+						txt.append("Alvi =  Entrez : /2/ pour Bosse/Nodule \n");
+						txt.append("Alvi =  Entrez : /3/ pour Zone Rouge/Chaude \n");
+						txt.append("Alvi =  Entrez : 'non' pour presence d'aucun de ces Sympthomes \n");
+						image1.setVisible(true);
+						image2.setVisible(true);
+						image3.setVisible(true);
+						image1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/difformite.png")));
+						image2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/nodule.png")));
+						image3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/rouge.png")));
+						image.setVisible(false);
 						level = 3;
 					} else if (reponse.toLowerCase().equals("non")) {
-						txt.append("Alvi = Mince ! Et ce mouvement la pouvez vous le faire ? \n");
-						level = 4;
+						txt.append("Alvi = Mince ! Recommencons notre test ! \n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));	
+						image.setVisible(true);
+						level = 1;
 					}
 					break;
-				// Case ou en deux il répond oui
 				case 3:
-					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = réponse oui");
+					if (reponse.toLowerCase().equals("1")) {
+						txt.append("Alvi = avez vous réaliser une chuté recemment ? \n");
+						level = 4;
+					}
+					if (reponse.toLowerCase().equals("2")) {
+						txt.append("Alvi = ressenter vous une sensation de chaleur ? \n");
 						level = 5;
+					}
+					if (reponse.toLowerCase().equals("3")) {
+						txt.append("Alvi = ressenter vous une certaine fatigue ? \n");
+						level = 7;
+					}
+					else if (reponse.toLowerCase().equals("non")) {
+						txt.append("Alvi = Mince ! Recommencons notre test ! \n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
+						image1.setVisible(false);
+						image2.setVisible(false);
+						image3.setVisible(false);
+						image.setVisible(true);
+						level = 1;
+					}
+					break;
+				case 4:
+					if (reponse.toLowerCase().equals("oui")) {
+						txt.append("Alvi = Il s'ajit certainement d'une fracture ! \n");
+						image1.setVisible(false);
+						image2.setVisible(false);
+						image3.setVisible(false);
 					} else if (reponse.toLowerCase().equals("non")) {
-						txt.append("Alvi =reponse non\n");
+						txt.append("Alvi = Mince ! Recommencons notre test ! \n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
+						image1.setVisible(false);
+						image2.setVisible(false);
+						image3.setVisible(false);
+						image.setVisible(true);
+						level = 1;
+					}
+					break;
+				case 5:
+					if (reponse.toLowerCase().equals("oui")) {
+						txt.append("Alvi = Il s'ajit certainement d'une tendinite ! \n");
+					} else if (reponse.toLowerCase().equals("non")) {
+						txt.append("Alvi = etes vous amener a realise le meme mouvement au cours d'une journée ? (sportif ou professionelle) \n");
 						level = 6;
 					}
 					break;
-				// Case ou en deux il répond non
-				case 4:
-					txt.append("Alvi = reponse non \n");
-					break;
-				case 5:
-					break;
 				case 6:
+					if (reponse.toLowerCase().equals("oui")) {
+						txt.append("Alvi = Il s'ajit certainement d'une entorse ! \n");
+					} else if (reponse.toLowerCase().equals("non")) {
+						txt.append("Alvi = Mince ! Recommencons notre test ! \n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));	
+						image.setVisible(true);
+						level = 1;
+					}
 					break;
 				case 7:
+					if (reponse.toLowerCase().equals("oui")) {
+						txt.append("Alvi = Il s'ajit certainement d'une polyarthrite ! \n");
+					} else if (reponse.toLowerCase().equals("non")) {
+						txt.append("Alvi = Il s'ajit certainement d'une tendinite ! \n");
+					}
 					break;
 				case 8:
 					break;
@@ -198,18 +280,6 @@ public class Chatbot extends JFrame {
 				}
 			}
 		});
-        /////
-		JLabel lblQuestion = new JLabel("Question");
-		lblQuestion.setForeground(SystemColor.textHighlight);
-		lblQuestion.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblQuestion.setBounds(28, 64, 411, 52);
-		contentPane.add(lblQuestion);
-
-		JLabel lblVotreRponse = new JLabel("Votre R\u00E9ponse");
-		lblVotreRponse.setForeground(SystemColor.textHighlight);
-		lblVotreRponse.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblVotreRponse.setBounds(27, 346, 411, 52);
-		contentPane.add(lblVotreRponse);
 
 		fermer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
