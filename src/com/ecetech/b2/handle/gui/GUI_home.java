@@ -17,6 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JLayeredPane;
 import java.awt.Toolkit;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
 
 
 
@@ -76,12 +77,12 @@ public class GUI_home {
 		panel.add(layeredPane);
 		
 		// declaration panel qui ne bouge pas gauche menu et en haut barre de recherche
-		JPanel barre_recherche = new JPanel();
-		barre_recherche.setBackground(new Color(102, 205, 170));
-		barre_recherche.setForeground(new Color(250, 240, 230));
-		barre_recherche.setBounds(258, 0, 1005, 103);
-		panel.add(barre_recherche);
-		barre_recherche.setLayout(null);
+		JPanel barre_top = new JPanel();
+		barre_top.setBackground(new Color(102, 205, 170));
+		barre_top.setForeground(new Color(250, 240, 230));
+		barre_top.setBounds(258, 0, 1005, 103);
+		panel.add(barre_top);
+		barre_top.setLayout(null);
 		
 		JPanel barre_Menu = new JPanel();
 		barre_Menu.setForeground(new Color(0, 0, 0));
@@ -90,11 +91,11 @@ public class GUI_home {
 		panel.add(barre_Menu);
 		barre_Menu.setLayout(null);
 		
-		JLabel affichageBienvenue = new JLabel("Bienvenu(e)");
+		JLabel affichageBienvenue = new JLabel("Bienvenue");
 		affichageBienvenue.setForeground(new Color(250, 240, 230));
 		affichageBienvenue.setFont(new Font("Tahoma", Font.BOLD, 25));
 		affichageBienvenue.setBounds(24, 40, 232, 31);
-		barre_recherche.add(affichageBienvenue);
+		barre_top.add(affichageBienvenue);
 		
 		
 		//Logo Handle
@@ -431,78 +432,92 @@ public class GUI_home {
 			copyright_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
 			copyright_2.setBounds(957, 504, 38, 32);
 			examen.add(copyright_2);
-			
-			
-			
-			
-			//----------------------------------------------------------------------------------------------------------------\\
-			
-			
-			
-			
-			
-			//Panel diagnostique
-			JPanel diagnostic = new JPanel();
-			diagnostic.setBackground(new Color(102, 255, 153));
-			diagnostic.setBounds(0, 0, 1005, 546);
-			layeredPane.add(diagnostic);
-			diagnostic.setLayout(null);
-			
-				JLabel label_2 = new JLabel("");
-				label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-				label_2.setBounds(957, 504, 38, 32);
-				diagnostic.add(label_2);
-				
-				JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
-				lblDiagnostique_1.setForeground(new Color(0, 51, 51));
-				lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-				lblDiagnostique_1.setBounds(363, 10, 330, 47);
-				diagnostic.add(lblDiagnostique_1);
-				
-				JLabel lblNewLabel_2 = new JLabel("Vous retrouverez ici vos derniers Examen !");
-				lblNewLabel_2.setForeground(Color.BLUE);
-				lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
-				lblNewLabel_2.setBounds(244, 76, 578, 47);
-				diagnostic.add(lblNewLabel_2);
-				
-				JLabel lblVotreDernierExamen = new JLabel("Votre dernier examen en date :");
-				lblVotreDernierExamen.setForeground(SystemColor.textHighlight);
-				lblVotreDernierExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
-				lblVotreDernierExamen.setBounds(24, 160, 578, 47);
-				diagnostic.add(lblVotreDernierExamen);
 				
 				
-				JLabel resultat = new JLabel("");
-				resultat.setFont(new Font("Tahoma", Font.PLAIN, 30));
-				resultat.setBounds(104, 416, 809, 47);
-				diagnostic.add(resultat);
-				
-				JTextArea textArea_1 = new JTextArea();
-				textArea_1.setBounds(104, 245, 809, 157);
-				diagnostic.add(textArea_1);
-			
 				
 				
-			//----------------------------------------------------------------------------------------------------------------\\	
+				//----------------------------------------------------------------------------------------------------------------\\
 				
-			
 				
-			JPanel aide = new JPanel();
-			aide.setBackground(new Color(102, 255, 153));
-			aide.setBounds(0, 0, 1005, 546);
-			layeredPane.add(aide);
-			aide.setLayout(null);
-			
-				JLabel label_3 = new JLabel("");
-				label_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-				label_3.setBounds(957, 504, 38, 32);
-				aide.add(label_3);
 				
-				JLabel lblAide_1 = new JLabel("AIDE");
-				lblAide_1.setForeground(new Color(0, 51, 51));
-				lblAide_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-				lblAide_1.setBounds(467, 10, 102, 47);
-				aide.add(lblAide_1);
+				
+				
+				//Panel diagnostique
+				JPanel diagnostic = new JPanel();
+				diagnostic.setBackground(new Color(102, 255, 153));
+				diagnostic.setBounds(0, 0, 1005, 546);
+				layeredPane.add(diagnostic);
+				diagnostic.setLayout(null);
+				
+					JLabel label_2 = new JLabel("");
+					label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+					label_2.setBounds(957, 504, 38, 32);
+					diagnostic.add(label_2);
+					
+					JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
+					lblDiagnostique_1.setForeground(new Color(0, 51, 51));
+					lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+					lblDiagnostique_1.setBounds(363, 10, 330, 47);
+					diagnostic.add(lblDiagnostique_1);
+					
+					JLabel textSousTitre = new JLabel("Vous retrouverez ici vos derniers Examen !");
+					textSousTitre.setForeground(Color.BLUE);
+					textSousTitre.setFont(new Font("Tahoma", Font.BOLD, 30));
+					textSousTitre.setBounds(201, 68, 679, 47);
+					diagnostic.add(textSousTitre);
+					
+					JLabel lblVotreDernierExamen = new JLabel("Votre dernier examen en date :");
+					lblVotreDernierExamen.setForeground(SystemColor.textHighlight);
+					lblVotreDernierExamen.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 30));
+					lblVotreDernierExamen.setBounds(24, 160, 578, 47);
+					diagnostic.add(lblVotreDernierExamen);
+					
+					
+					JLabel resultat = new JLabel("");
+					resultat.setFont(new Font("Tahoma", Font.PLAIN, 30));
+					resultat.setBounds(104, 416, 809, 47);
+					diagnostic.add(resultat);
+					
+					JTextArea textArea_1 = new JTextArea();
+					textArea_1.setFont(new Font("Century", Font.PLAIN, 16));
+					textArea_1.setBackground(new Color(102, 255, 153));
+					textArea_1.setBounds(24, 245, 971, 157);
+					diagnostic.add(textArea_1);
+				
+					
+					
+				//----------------------------------------------------------------------------------------------------------------\\	
+					
+				
+					
+				JPanel aide = new JPanel();
+				aide.setBackground(new Color(102, 255, 153));
+				aide.setBounds(0, 0, 1005, 546);
+				layeredPane.add(aide);
+				aide.setLayout(null);
+				
+					JLabel label_3 = new JLabel("");
+					label_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+					label_3.setBounds(957, 504, 38, 32);
+					aide.add(label_3);
+					
+					JLabel lblAide_1 = new JLabel("AIDE");
+					lblAide_1.setForeground(new Color(0, 51, 51));
+					lblAide_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+					lblAide_1.setBounds(467, 10, 102, 47);
+					aide.add(lblAide_1);
+					
+					JLabel aProposTitre = new JLabel("A propos :");
+					aProposTitre.setFont(new Font("Tahoma", Font.BOLD, 17));
+					aProposTitre.setBounds(65, 98, 115, 26);
+					aide.add(aProposTitre);
+					
+					JTextPane aProposTextContent = new JTextPane();
+					aProposTextContent.setBackground(new Color(102, 255, 153));
+					aProposTextContent.setFont(new Font("Sylfaen", Font.PLAIN, 17));
+					aProposTextContent.setText("Handle est une application qui va r\u00E9aliser un diagnostique si vous rencontrer des probl\u00E8mes de sant\u00E9 type blessure ou maux en g\u00E9n\u00E9ral. Pour r\u00E9aliser un diagnostique rendez-vous dans l'onglet examen puis cliquer sur d\u00E9marrer l'examen. Une nouvelle fen\u00EAtre va s'ouvrir et nous allons vous posez quelques question. Vous devez r\u00E9pondre g\u00E9n\u00E9ralement par oui ou par non. Lorsque d'autres types de questions sont propos\u00E9s les choix vous seront propos\u00E9s. Il faudra simplement \u00E9crire le la r\u00E9ponse correspondante.\r\n\r\nPour plus d'information ou pour signaler quelconques probl\u00E8mes de fonctionnement contacter : handle_support@gmail.com");
+					aProposTextContent.setBounds(61, 150, 934, 230);
+					aide.add(aProposTextContent);
 						
 				
 				
