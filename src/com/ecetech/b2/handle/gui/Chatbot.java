@@ -172,6 +172,9 @@ public class Chatbot extends JFrame {
 							exp.printStackTrace();
 						}
 					}
+					else if(reponse.contentEquals("oui")==false || reponse.contentEquals("non")==false ) {
+						txt.append("Alvi = Mince ! mauvaise saisie veuillez recommencer !\n");
+					}
 					break;
 				case 2:
 					if (reponse.toLowerCase().equals("oui")) {
@@ -217,10 +220,14 @@ public class Chatbot extends JFrame {
 						image.setVisible(true);
 						level = 1;
 					}
+					else if(reponse.contentEquals("1")==false || reponse.contentEquals("2")==false || reponse.contentEquals("3")==false || reponse.contentEquals("non")==false) {
+						txt.append("Alvi = Mince ! mauvaise saisie veuillez recommencer !\n");
+						level = 3;
+					}
 					break;
 				case 4:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Il s'ajit certainement d'une fracture ! \n");
+						txt.append("Alvi = Il s'agit certainement d'une fracture ! \n");
 						image1.setVisible(false);
 						image2.setVisible(false);
 						image3.setVisible(false);
@@ -236,7 +243,7 @@ public class Chatbot extends JFrame {
 					break;
 				case 5:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Il s'ajit certainement d'une tendinite ! \n");
+						txt.append("Alvi = Il s'agit certainement d'une tendinite ! \n");
 					} else if (reponse.toLowerCase().equals("non")) {
 						txt.append("Alvi = etes vous amener a realise le meme mouvement au cours d'une journée ? (sportif ou professionelle) \n");
 						level = 6;
@@ -244,7 +251,7 @@ public class Chatbot extends JFrame {
 					break;
 				case 6:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Il s'ajit certainement d'une entorse ! \n");
+						txt.append("Alvi = Il s'agit certainement d'une entorse ! \n");
 					} else if (reponse.toLowerCase().equals("non")) {
 						txt.append("Alvi = Mince ! Recommencons notre test ! \n");
 						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));	
@@ -254,9 +261,9 @@ public class Chatbot extends JFrame {
 					break;
 				case 7:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Il s'ajit certainement d'une polyarthrite ! \n");
+						txt.append("Alvi = Il s'agit certainement d'une polyarthrite ! \n");
 					} else if (reponse.toLowerCase().equals("non")) {
-						txt.append("Alvi = Il s'ajit certainement d'une tendinite ! \n");
+						txt.append("Alvi = Il s'agit certainement d'une tendinite ! \n");
 					}
 					break;
 				case 8:
