@@ -1,8 +1,5 @@
 package com.ecetech.b2.handle.gui;
 
-
-import com.ecetech.b2.handle.gui.*;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -19,7 +16,6 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JLayeredPane;
 import java.awt.Toolkit;
-import javax.swing.JTextPane;
 import javax.swing.JTextArea;
 
 
@@ -94,25 +90,11 @@ public class GUI_home {
 		panel.add(barre_Menu);
 		barre_Menu.setLayout(null);
 		
-		
-		//Barre de recherche
-		
-		JTextField textField;
-		textField = new JTextField();
-		textField.setBounds(888, 37, 107, 19);
-		barre_recherche.add(textField);
-		textField.setColumns(10);
-		
-		JLabel lblSearch = new JLabel("");
-		lblSearch.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_search_32px.png")));
-		lblSearch.setBounds(848, 0, 157, 97);
-		barre_recherche.add(lblSearch);
-		
-		JLabel lblBienvenueElian = new JLabel("Bienvenu(e) Elian");
-		lblBienvenueElian.setForeground(new Color(250, 240, 230));
-		lblBienvenueElian.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblBienvenueElian.setBounds(24, 40, 232, 31);
-		barre_recherche.add(lblBienvenueElian);
+		JLabel affichageBienvenue = new JLabel("Bienvenu(e)");
+		affichageBienvenue.setForeground(new Color(250, 240, 230));
+		affichageBienvenue.setFont(new Font("Tahoma", Font.BOLD, 25));
+		affichageBienvenue.setBounds(24, 40, 232, 31);
+		barre_recherche.add(affichageBienvenue);
 		
 		
 		//Logo Handle
@@ -197,7 +179,7 @@ public class GUI_home {
 		examenbutton.setBounds(42, 356, 167, 44);
 		barre_Menu.add(examenbutton);
 		
-		//boutton diagnostique
+		//bouton diagnostique
 		JButton diagnostiquebutton = new JButton("");
 		diagnostiquebutton.setOpaque(false);
 		diagnostiquebutton.setForeground(Color.BLACK);
@@ -207,7 +189,7 @@ public class GUI_home {
 		diagnostiquebutton.setBounds(13, 432, 236, 44);
 		barre_Menu.add(diagnostiquebutton);
 		
-		//bouton aidE
+		//bouton aide
 		JButton aidebutton = new JButton("");
 		aidebutton.setOpaque(false);
 		aidebutton.setForeground(Color.BLACK);
@@ -217,47 +199,18 @@ public class GUI_home {
 		aidebutton.setBounds(42, 515, 136, 44);
 		barre_Menu.add(aidebutton);
 		
-		JPanel diagnostic = new JPanel();
-		diagnostic.setBackground(new Color(102, 255, 153));
-		diagnostic.setBounds(0, 0, 1005, 546);
-		layeredPane.add(diagnostic);
-		diagnostic.setLayout(null);
-		
-		JLabel label_2 = new JLabel("");
-		label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-		label_2.setBounds(957, 504, 38, 32);
-		diagnostic.add(label_2);
-		
-		JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
-		lblDiagnostique_1.setForeground(new Color(0, 51, 51));
-		lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblDiagnostique_1.setBounds(363, 10, 330, 47);
-		diagnostic.add(lblDiagnostique_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Vous retrouverez ici vos derniers Examen !");
-		lblNewLabel_2.setForeground(Color.BLUE);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel_2.setBounds(244, 76, 578, 47);
-		diagnostic.add(lblNewLabel_2);
-		
-		JLabel lblVotreDernierExamen = new JLabel("Votre dernier examen en date :");
-		lblVotreDernierExamen.setForeground(SystemColor.textHighlight);
-		lblVotreDernierExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblVotreDernierExamen.setBounds(24, 160, 578, 47);
-		diagnostic.add(lblVotreDernierExamen);
 		
 		
-		JLabel resultat = new JLabel("");
-		resultat.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		resultat.setBounds(104, 416, 809, 47);
-		diagnostic.add(resultat);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(104, 245, 809, 157);
-		diagnostic.add(textArea);
 		
-		// declaration autre panel 
+		///
+		// declaration des différents panels. Indentation pour préciser quels label est dans quel panel
+		///
 		
+		
+		
+
+		//panel accueil
 		JPanel accueil = new JPanel();
 		accueil.setForeground(new Color(224, 255, 255));
 		accueil.setBackground(new Color(102, 255, 153));
@@ -265,47 +218,50 @@ public class GUI_home {
 		layeredPane.add(accueil);
 		accueil.setLayout(null);
 		
-		// label panel accueil accueil
-		JLabel lblBienvenue = new JLabel("BIENVENUE");
-		lblBienvenue.setForeground(new Color(0, 0, 128));
-		lblBienvenue.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblBienvenue.setBounds(64, 36, 252, 47);
-		accueil.add(lblBienvenue);
-		
-		JLabel imageAccueil = new JLabel("");
-		imageAccueil.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
-		imageAccueil.setBounds(113, 114, 160, 362);
-		accueil.add(imageAccueil);
-		
-		JLabel lblDernierDiagnostique = new JLabel("DERNIER DIAGNOSTIQUE");
-		lblDernierDiagnostique.setForeground(new Color(0, 128, 128));
-		lblDernierDiagnostique.setFont(new Font("Tahoma", Font.BOLD, 34));
-		lblDernierDiagnostique.setBounds(460, 106, 448, 47);
-		accueil.add(lblDernierDiagnostique);
-		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(GUI_home.class.getResource("/img/health_checkup_100px.png")));
-		lblNewLabel.setBounds(356, 226, 114, 95);
-		accueil.add(lblNewLabel);
-		
-		JLabel lblRaliserLe = new JLabel("R\u00E9aliser le 12/12/2019");
-		lblRaliserLe.setForeground(new Color(0, 128, 128));
-		lblRaliserLe.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblRaliserLe.setBounds(488, 248, 364, 47);
-		accueil.add(lblRaliserLe);
-		
-		JButton btnNewButton = new JButton("Voir");
-		btnNewButton.setForeground(new Color(245, 255, 250));
-		btnNewButton.setBackground(new Color(0, 128, 128));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		btnNewButton.setBounds(876, 254, 81, 39);
-		accueil.add(btnNewButton);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-		lblNewLabel_1.setBounds(957, 504, 38, 32);
-		accueil.add(lblNewLabel_1);
-		
+			JLabel lblBienvenue = new JLabel("BIENVENUE");
+			lblBienvenue.setForeground(new Color(0, 0, 128));
+			lblBienvenue.setFont(new Font("Tahoma", Font.BOLD, 40));
+			lblBienvenue.setBounds(64, 36, 252, 47);
+			accueil.add(lblBienvenue);
+			
+			JLabel imageAccueil = new JLabel("");
+			imageAccueil.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
+			imageAccueil.setBounds(113, 114, 160, 362);
+			accueil.add(imageAccueil);
+			
+			JLabel lblDernierDiagnostique = new JLabel("DERNIER DIAGNOSTIQUE");
+			lblDernierDiagnostique.setForeground(new Color(0, 128, 128));
+			lblDernierDiagnostique.setFont(new Font("Tahoma", Font.BOLD, 34));
+			lblDernierDiagnostique.setBounds(460, 106, 448, 47);
+			accueil.add(lblDernierDiagnostique);
+			
+			JLabel lblNewLabel = new JLabel("");
+			lblNewLabel.setIcon(new ImageIcon(GUI_home.class.getResource("/img/health_checkup_100px.png")));
+			lblNewLabel.setBounds(356, 226, 114, 95);
+			accueil.add(lblNewLabel);
+			
+			JLabel lblRaliserLe = new JLabel("R\u00E9aliser le 12/12/2019");
+			lblRaliserLe.setForeground(new Color(0, 128, 128));
+			lblRaliserLe.setFont(new Font("Tahoma", Font.BOLD, 30));
+			lblRaliserLe.setBounds(488, 248, 364, 47);
+			accueil.add(lblRaliserLe);
+			
+			JButton btnNewButton = new JButton("Voir");
+			btnNewButton.setForeground(new Color(245, 255, 250));
+			btnNewButton.setBackground(new Color(0, 128, 128));
+			btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
+			btnNewButton.setBounds(876, 254, 81, 39);
+			accueil.add(btnNewButton);
+			
+			JLabel lblNewLabel_1 = new JLabel("");
+			lblNewLabel_1.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+			lblNewLabel_1.setBounds(957, 504, 38, 32);
+			accueil.add(lblNewLabel_1);
+			
+			//----------------------------------------------------------------------------------------------------------------\\
+			
+			
+		// label panel profil
 		JPanel profil = new JPanel();
 		profil.setBackground(new Color(102, 255, 153));
 		profil.setForeground(new Color(153, 255, 153));
@@ -313,173 +269,230 @@ public class GUI_home {
 		layeredPane.add(profil);
 		profil.setLayout(null);
 		
-		// label panel profil
-		JLabel lblTitre = new JLabel("PROFIL");
-		lblTitre.setForeground(new Color(0, 51, 51));
-		lblTitre.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblTitre.setBounds(429, 28, 185, 47);
-		profil.add(lblTitre);
+			JLabel lblTitre = new JLabel("PROFIL");
+			lblTitre.setForeground(new Color(0, 51, 51));
+			lblTitre.setFont(new Font("Tahoma", Font.BOLD, 40));
+			lblTitre.setBounds(429, 28, 185, 47);
+			profil.add(lblTitre);
 		
-		JLabel lblIdentifiant = new JLabel("IDENTIFIANT");
-		lblIdentifiant.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblIdentifiant.setBounds(157, 111, 141, 47);
-		profil.add(lblIdentifiant);
+			JLabel lblIdentifiant = new JLabel("IDENTIFIANT");
+			lblIdentifiant.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+			lblIdentifiant.setBounds(157, 111, 141, 47);
+			profil.add(lblIdentifiant);
+			
+			JTextField textField_ID;
+			textField_ID = new JTextField();
+			textField_ID.setVisible(false);
+			textField_ID.setBounds(157, 157, 194, 19);
+			profil.add(textField_ID);
+			textField_ID.setColumns(10);
+			
+			JLabel lblMotDePasse = new JLabel("MOT DE PASSE");
+			lblMotDePasse.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+			lblMotDePasse.setBounds(157, 186, 162, 47);
+			profil.add(lblMotDePasse);
+			
+			JTextField textField_mdp;
+			textField_mdp = new JTextField();
+			textField_mdp.setVisible(false);
+			textField_mdp.setColumns(10);
+			textField_mdp.setBounds(157, 232, 194, 19);
+			profil.add(textField_mdp);
+			
+			JLabel lblEmail = new JLabel("EMAIL");
+			lblEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+			lblEmail.setBounds(157, 261, 141, 47);
+			profil.add(lblEmail);
+			
+			JTextField textField_email;
+			textField_email = new JTextField();
+			textField_email.setVisible(false);
+			textField_email.setColumns(10);
+			textField_email.setBounds(157, 307, 194, 19);
+			profil.add(textField_email);
+			
+			JLabel lblPrenom = new JLabel("PRENOM");
+			lblPrenom.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+			lblPrenom.setBounds(587, 111, 141, 47);
+			profil.add(lblPrenom);
+			
+			JTextField textField_prenom;
+			textField_prenom = new JTextField();
+			textField_prenom.setVisible(false);
+			textField_prenom.setColumns(10);
+			textField_prenom.setBounds(587, 157, 194, 19);
+			profil.add(textField_prenom);
+			
+			JLabel lblNom = new JLabel("NOM");
+			lblNom.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+			lblNom.setBounds(587, 186, 162, 47);
+			profil.add(lblNom);
+			
+			JTextField textField_nom;
+			textField_nom = new JTextField();
+			textField_nom.setVisible(false);
+			textField_nom.setColumns(10);
+			textField_nom.setBounds(587, 232, 194, 19);
+			profil.add(textField_nom);
+			
+			JLabel lblAge = new JLabel("AGE");
+			lblAge.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+			lblAge.setBounds(587, 261, 141, 47);
+			profil.add(lblAge);
+			
+			JTextField textField_age;
+			textField_age = new JTextField();
+			textField_age.setVisible(false);
+			textField_age.setColumns(10);
+			textField_age.setBounds(587, 307, 194, 19);
+			profil.add(textField_age);
+			
+			JLabel lblProfession = new JLabel("PROFESSION");
+			lblProfession.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
+			lblProfession.setBounds(587, 336, 141, 47);
+			profil.add(lblProfession);
+			
+			JTextField textField_profession;
+			textField_profession = new JTextField();
+			textField_profession.setVisible(false);
+			textField_profession.setColumns(10);
+			textField_profession.setBounds(587, 382, 194, 19);
+			profil.add(textField_profession);
+			
+			JLabel iconeId = new JLabel("");
+			iconeId.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_male_user_50px.png")));
+			iconeId.setBounds(94, 137, 50, 60);
+			profil.add(iconeId);
+			
+			JLabel iconeMdp = new JLabel("");
+			iconeMdp.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_password_50px.png")));
+			iconeMdp.setBounds(94, 207, 53, 60);
+			profil.add(iconeMdp);
+			
+			JLabel iconeMail = new JLabel("");
+			iconeMail.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_secured_letter_50px.png")));
+			iconeMail.setBounds(94, 291, 50, 50);
+			profil.add(iconeMail);
+			
+			JLabel copyright = new JLabel("");
+			copyright.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+			copyright.setBounds(957, 504, 38, 32);
+			profil.add(copyright);
+			
 		
-		JTextField textField_ID;
-		textField_ID = new JTextField();
-		textField_ID.setVisible(false);
-		textField_ID.setBounds(157, 157, 194, 19);
-		profil.add(textField_ID);
-		textField_ID.setColumns(10);
+			
+		//----------------------------------------------------------------------------------------------------------------\\	
 		
-		JLabel lblMotDePasse = new JLabel("MOT DE PASSE");
-		lblMotDePasse.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblMotDePasse.setBounds(157, 186, 162, 47);
-		profil.add(lblMotDePasse);
-		
-		JTextField textField_mdp;
-		textField_mdp = new JTextField();
-		textField_mdp.setVisible(false);
-		textField_mdp.setColumns(10);
-		textField_mdp.setBounds(157, 232, 194, 19);
-		profil.add(textField_mdp);
-		
-		JLabel lblEmail = new JLabel("EMAIL");
-		lblEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblEmail.setBounds(157, 261, 141, 47);
-		profil.add(lblEmail);
-		
-		JTextField textField_email;
-		textField_email = new JTextField();
-		textField_email.setVisible(false);
-		textField_email.setColumns(10);
-		textField_email.setBounds(157, 307, 194, 19);
-		profil.add(textField_email);
-		
-		JLabel lblPrenom = new JLabel("PRENOM");
-		lblPrenom.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblPrenom.setBounds(587, 111, 141, 47);
-		profil.add(lblPrenom);
-		
-		JTextField textField_prenom;
-		textField_prenom = new JTextField();
-		textField_prenom.setVisible(false);
-		textField_prenom.setColumns(10);
-		textField_prenom.setBounds(587, 157, 194, 19);
-		profil.add(textField_prenom);
-		
-		JLabel lblNom = new JLabel("NOM");
-		lblNom.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblNom.setBounds(587, 186, 162, 47);
-		profil.add(lblNom);
-		
-		JTextField textField_nom;
-		textField_nom = new JTextField();
-		textField_nom.setVisible(false);
-		textField_nom.setColumns(10);
-		textField_nom.setBounds(587, 232, 194, 19);
-		profil.add(textField_nom);
-		
-		JLabel lblAge = new JLabel("AGE");
-		lblAge.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblAge.setBounds(587, 261, 141, 47);
-		profil.add(lblAge);
-		
-		JTextField textField_age;
-		textField_age = new JTextField();
-		textField_age.setVisible(false);
-		textField_age.setColumns(10);
-		textField_age.setBounds(587, 307, 194, 19);
-		profil.add(textField_age);
-		
-		JLabel lblProfession = new JLabel("PROFESSION");
-		lblProfession.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
-		lblProfession.setBounds(587, 336, 141, 47);
-		profil.add(lblProfession);
-		
-		JTextField textField_profession;
-		textField_profession = new JTextField();
-		textField_profession.setVisible(false);
-		textField_profession.setColumns(10);
-		textField_profession.setBounds(587, 382, 194, 19);
-		profil.add(textField_profession);
-		
-		JLabel iconeId = new JLabel("");
-		iconeId.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_male_user_50px.png")));
-		iconeId.setBounds(94, 137, 50, 60);
-		profil.add(iconeId);
-		
-		JLabel iconeMdp = new JLabel("");
-		iconeMdp.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_password_50px.png")));
-		iconeMdp.setBounds(94, 207, 53, 60);
-		profil.add(iconeMdp);
-		
-		JLabel iconeMail = new JLabel("");
-		iconeMail.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_secured_letter_50px.png")));
-		iconeMail.setBounds(94, 291, 50, 50);
-		profil.add(iconeMail);
-		
-		JLabel copyright = new JLabel("");
-		copyright.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-		copyright.setBounds(957, 504, 38, 32);
-		profil.add(copyright);
-		
+			
+		// panel examen	
 		JPanel examen = new JPanel();
 		examen.setBackground(new Color(102, 255, 153));
 		examen.setBounds(0, 0, 1005, 546);
 		layeredPane.add(examen);
 		examen.setLayout(null);
 		
-		
-		// label panel examen examen
-		JLabel titreLblExam = new JLabel("EXAMEN");
-		titreLblExam.setForeground(new Color(0, 51, 51));
-		titreLblExam.setFont(new Font("Tahoma", Font.BOLD, 40));
-		titreLblExam.setBounds(440, 36, 185, 47);
-		examen.add(titreLblExam);
-		
+			JLabel titreLblExam = new JLabel("EXAMEN");
+			titreLblExam.setForeground(new Color(0, 51, 51));
+			titreLblExam.setFont(new Font("Tahoma", Font.BOLD, 40));
+			titreLblExam.setBounds(440, 36, 185, 47);
+			examen.add(titreLblExam);
 					
-		JLabel iconeDesc1 = new JLabel("AFIN D'ETABLIR AU MIEUX VOTRE PROFIL ET UN DIAGNOSTIQUE PLUSIEURS QUESTION ");
-		iconeDesc1.setForeground(new Color(0, 128, 128));
-		iconeDesc1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		iconeDesc1.setBounds(60, 93, 985, 47);
-		examen.add(iconeDesc1);
-		
-		JLabel iconeDesc2 = new JLabel("VONT VOUS ETRE POSER EN FONCTION DE VOS REPONSE AU PRECEDENTE QUESTION");
-		iconeDesc2.setForeground(new Color(0, 128, 128));
-		iconeDesc2.setFont(new Font("Tahoma", Font.BOLD, 20));
-		iconeDesc2.setBounds(84, 123, 867, 47);
-		examen.add(iconeDesc2);
-		
-		JLabel iconeAttention = new JLabel("");
-		iconeAttention.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
-		iconeAttention.setBounds(20, 174, 80, 80);
-		examen.add(iconeAttention);
-		
-		JLabel iconeDesc3 = new JLabel("ATTENTION VOS REPONSES AU QUESTION SONT DETERMINANTE AFIN DE REALISER UN DIAGNOSTIQUE CORRECT !");
-		iconeDesc3.setForeground(new Color(255, 0, 0));
-		iconeDesc3.setFont(new Font("Tahoma", Font.BOLD, 15));
-		iconeDesc3.setBounds(110, 190, 921, 47);
-		examen.add(iconeDesc3);
-		
-		JButton btnDemarrerExamen = new JButton("D\u00E9marer l'\u00E9xamen");
-		btnDemarrerExamen.setForeground(Color.WHITE);
-		btnDemarrerExamen.setBackground(SystemColor.textHighlight);
-		btnDemarrerExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnDemarrerExamen.setBounds(378, 363, 295, 92);
-		examen.add(btnDemarrerExamen);
-		
-				JLabel copyright_2 = new JLabel("");
-				copyright_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-				copyright_2.setBounds(957, 504, 38, 32);
-				examen.add(copyright_2);
+			JLabel iconeDesc1 = new JLabel("AFIN D'ETABLIR AU MIEUX VOTRE PROFIL ET UN DIAGNOSTIQUE PLUSIEURS QUESTION ");
+			iconeDesc1.setForeground(new Color(0, 128, 128));
+			iconeDesc1.setFont(new Font("Tahoma", Font.BOLD, 20));
+			iconeDesc1.setBounds(60, 93, 985, 47);
+			examen.add(iconeDesc1);
+			
+			JLabel iconeDesc2 = new JLabel("VONT VOUS ETRE POSER EN FONCTION DE VOS REPONSE AU PRECEDENTE QUESTION");
+			iconeDesc2.setForeground(new Color(0, 128, 128));
+			iconeDesc2.setFont(new Font("Tahoma", Font.BOLD, 20));
+			iconeDesc2.setBounds(84, 123, 867, 47);
+			examen.add(iconeDesc2);
+			
+			JLabel iconeAttention = new JLabel("");
+			iconeAttention.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_high_priority_80px.png")));
+			iconeAttention.setBounds(20, 174, 80, 80);
+			examen.add(iconeAttention);
+			
+			JLabel iconeDesc3 = new JLabel("ATTENTION VOS REPONSES AU QUESTION SONT DETERMINANTE AFIN DE REALISER UN DIAGNOSTIQUE CORRECT !");
+			iconeDesc3.setForeground(new Color(255, 0, 0));
+			iconeDesc3.setFont(new Font("Tahoma", Font.BOLD, 15));
+			iconeDesc3.setBounds(110, 190, 921, 47);
+			examen.add(iconeDesc3);
+			
+			JButton btnDemarrerExamen = new JButton("D\u00E9marer l'\u00E9xamen");
+			btnDemarrerExamen.setForeground(Color.WHITE);
+			btnDemarrerExamen.setBackground(SystemColor.textHighlight);
+			btnDemarrerExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
+			btnDemarrerExamen.setBounds(378, 363, 295, 92);
+			examen.add(btnDemarrerExamen);
+			
+			JLabel copyright_2 = new JLabel("");
+			copyright_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+			copyright_2.setBounds(957, 504, 38, 32);
+			examen.add(copyright_2);
+			
+			
+			
+			
+			//----------------------------------------------------------------------------------------------------------------\\
+			
+			
+			
+			
+			
+			//Panel diagnostique
+			JPanel diagnostic = new JPanel();
+			diagnostic.setBackground(new Color(102, 255, 153));
+			diagnostic.setBounds(0, 0, 1005, 546);
+			layeredPane.add(diagnostic);
+			diagnostic.setLayout(null);
+			
+				JLabel label_2 = new JLabel("");
+				label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+				label_2.setBounds(957, 504, 38, 32);
+				diagnostic.add(label_2);
 				
-				JPanel aide = new JPanel();
-				aide.setBackground(new Color(102, 255, 153));
-				aide.setBounds(0, 0, 1005, 546);
-				layeredPane.add(aide);
-				aide.setLayout(null);
+				JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
+				lblDiagnostique_1.setForeground(new Color(0, 51, 51));
+				lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+				lblDiagnostique_1.setBounds(363, 10, 330, 47);
+				diagnostic.add(lblDiagnostique_1);
 				
+				JLabel lblNewLabel_2 = new JLabel("Vous retrouverez ici vos derniers Examen !");
+				lblNewLabel_2.setForeground(Color.BLUE);
+				lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
+				lblNewLabel_2.setBounds(244, 76, 578, 47);
+				diagnostic.add(lblNewLabel_2);
+				
+				JLabel lblVotreDernierExamen = new JLabel("Votre dernier examen en date :");
+				lblVotreDernierExamen.setForeground(SystemColor.textHighlight);
+				lblVotreDernierExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
+				lblVotreDernierExamen.setBounds(24, 160, 578, 47);
+				diagnostic.add(lblVotreDernierExamen);
+				
+				
+				JLabel resultat = new JLabel("");
+				resultat.setFont(new Font("Tahoma", Font.PLAIN, 30));
+				resultat.setBounds(104, 416, 809, 47);
+				diagnostic.add(resultat);
+				
+				JTextArea textArea_1 = new JTextArea();
+				textArea_1.setBounds(104, 245, 809, 157);
+				diagnostic.add(textArea_1);
+			
+				
+				
+			//----------------------------------------------------------------------------------------------------------------\\	
+				
+			
+				
+			JPanel aide = new JPanel();
+			aide.setBackground(new Color(102, 255, 153));
+			aide.setBounds(0, 0, 1005, 546);
+			layeredPane.add(aide);
+			aide.setLayout(null);
+			
 				JLabel label_3 = new JLabel("");
 				label_3.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
 				label_3.setBounds(957, 504, 38, 32);
@@ -490,10 +503,20 @@ public class GUI_home {
 				lblAide_1.setFont(new Font("Tahoma", Font.BOLD, 40));
 				lblAide_1.setBounds(467, 10, 102, 47);
 				aide.add(lblAide_1);
+						
 				
+				
+				
+				
+			//----------------------------------------------------------------------------------------------------------------\\
+			
+				
+			
+				
+				//Bouton pour démarrer l'examen. Ouvre la fenêtre du chatbot
 						btnDemarrerExamen.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent e) {
-								Chatbot frame = new Chatbot(textArea);
+								Chatbot frame = new Chatbot(textArea_1);
 								frame.setUndecorated(true);
 								frame.setVisible(true);
 								frame.setLocationRelativeTo(null);
@@ -502,6 +525,8 @@ public class GUI_home {
 		
 		
 		//action des bouttons present dans le panel 2 permettant la redirection vers les autres panels
+
+		/// Envoie vers accueil				
 		accueilbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				layeredPane.removeAll();
@@ -510,6 +535,8 @@ public class GUI_home {
 				layeredPane.revalidate();
 			}
 		});
+		
+		/// Envoie vers Profil
 		profilbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				layeredPane.removeAll();
@@ -525,6 +552,9 @@ public class GUI_home {
 				textField_mdp.setVisible(true);
 			}
 		});
+		
+		
+		/// Envoie vers Examen
 		examenbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				layeredPane.removeAll();
@@ -533,6 +563,8 @@ public class GUI_home {
 				layeredPane.revalidate();
 			}
 		});
+		
+		/// Envoie vers diagnostique
 		diagnostiquebutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				layeredPane.removeAll();
@@ -541,6 +573,8 @@ public class GUI_home {
 				layeredPane.revalidate();
 			}
 		});
+		
+		/// Envoie vers aide
 		aidebutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				layeredPane.removeAll();

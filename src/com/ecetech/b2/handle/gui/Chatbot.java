@@ -1,6 +1,5 @@
 package com.ecetech.b2.handle.gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -25,6 +24,10 @@ import javax.swing.JTextArea;
 
 public class Chatbot extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	int xx, xy;
 	private JTextField field;
@@ -147,7 +150,7 @@ public class Chatbot extends JFrame {
 		txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n");
 
 		JScrollPane pane = new JScrollPane(txt, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		pane.setBounds(28, 126, 411, 210);
 		getContentPane().add(pane);
 

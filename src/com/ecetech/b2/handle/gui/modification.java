@@ -28,7 +28,6 @@ public class modification {
         Document doc = docBuilder.parse(filepath);
 
        //Get the root element
-        Node users = doc.getFirstChild();
 
        //Get the staff element , it may not working if tag has spaces, or
        //whatever weird characters in front...it's better to use
