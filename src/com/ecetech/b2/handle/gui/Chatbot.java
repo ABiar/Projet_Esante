@@ -203,11 +203,11 @@ public class Chatbot extends JFrame {
 						txt.append("Alvi = avez vous réaliser une chuté recemment ? \n");
 						level = 4;
 					}
-					if (reponse.toLowerCase().equals("2")) {
+					else if (reponse.toLowerCase().equals("2")) {
 						txt.append("Alvi = ressenter vous une sensation de chaleur ? \n");
 						level = 5;
 					}
-					if (reponse.toLowerCase().equals("3")) {
+					else if (reponse.toLowerCase().equals("3")) {
 						txt.append("Alvi = ressenter vous une certaine fatigue ? \n");
 						level = 7;
 					}
@@ -220,7 +220,7 @@ public class Chatbot extends JFrame {
 						image.setVisible(true);
 						level = 1;
 					}
-					else if(reponse.contentEquals("1")==false || reponse.contentEquals("2")==false || reponse.contentEquals("3")==false || reponse.contentEquals("non")==false) {
+					else{
 						txt.append("Alvi = Mince ! mauvaise saisie veuillez recommencer !\n");
 						level = 3;
 					}
