@@ -1,5 +1,8 @@
 package com.ecetech.b2.handle.gui;
 
+
+import com.ecetech.b2.handle.gui.*;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -18,6 +21,7 @@ import javax.swing.JLayeredPane;
 import java.awt.Toolkit;
 import javax.swing.JTextPane;
 import javax.swing.JTextArea;
+
 
 
 public class GUI_home {
@@ -489,7 +493,7 @@ public class GUI_home {
 				
 						btnDemarrerExamen.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent e) {
-								Chatbot frame = new Chatbot();
+								Chatbot frame = new Chatbot(textArea);
 								frame.setUndecorated(true);
 								frame.setVisible(true);
 								frame.setLocationRelativeTo(null);

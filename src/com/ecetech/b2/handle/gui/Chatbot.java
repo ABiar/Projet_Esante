@@ -30,6 +30,7 @@ public class Chatbot extends JFrame {
 	private JTextField field;
 	private static int level = 1;
 	private static Chatbot frame;
+	private static JTextArea textAreaA;
 	
 
 	/**
@@ -39,7 +40,7 @@ public class Chatbot extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frame = new Chatbot();
+					frame = new Chatbot(textAreaA);
 					frame.setUndecorated(true);
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
@@ -53,7 +54,8 @@ public class Chatbot extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Chatbot() {
+	public Chatbot(JTextArea textA) {
+		textAreaA = textA;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 617, 502);
 		contentPane = new JPanel();
@@ -228,6 +230,7 @@ public class Chatbot extends JFrame {
 				case 4:
 					if (reponse.toLowerCase().equals("oui")) {
 						txt.append("Alvi = Il s'agit certainement d'une fracture ! \n");
+						textAreaA.append("Alvi = Il s'agit certainement d'une fracture ! \n");
 						image1.setVisible(false);
 						image2.setVisible(false);
 						image3.setVisible(false);
