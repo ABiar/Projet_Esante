@@ -16,11 +16,14 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JLayeredPane;
 import java.awt.Toolkit;
+import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 
 public class GUI_home {
 
 	public JFrame framebis;
+	public JTextArea textArea;
 	
 	int xx,xy;
 	/**
@@ -209,6 +212,45 @@ public class GUI_home {
 		aidebutton.setBackground(Color.WHITE);
 		aidebutton.setBounds(42, 515, 136, 44);
 		barre_Menu.add(aidebutton);
+		
+		JPanel diagnostic = new JPanel();
+		diagnostic.setBackground(new Color(102, 255, 153));
+		diagnostic.setBounds(0, 0, 1005, 546);
+		layeredPane.add(diagnostic);
+		diagnostic.setLayout(null);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
+		label_2.setBounds(957, 504, 38, 32);
+		diagnostic.add(label_2);
+		
+		JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
+		lblDiagnostique_1.setForeground(new Color(0, 51, 51));
+		lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblDiagnostique_1.setBounds(363, 10, 330, 47);
+		diagnostic.add(lblDiagnostique_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Vous retrouverez ici vos derniers Examen !");
+		lblNewLabel_2.setForeground(Color.BLUE);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel_2.setBounds(244, 76, 578, 47);
+		diagnostic.add(lblNewLabel_2);
+		
+		JLabel lblVotreDernierExamen = new JLabel("Votre dernier examen en date :");
+		lblVotreDernierExamen.setForeground(SystemColor.textHighlight);
+		lblVotreDernierExamen.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblVotreDernierExamen.setBounds(24, 160, 578, 47);
+		diagnostic.add(lblVotreDernierExamen);
+		
+		
+		JLabel resultat = new JLabel("");
+		resultat.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		resultat.setBounds(104, 416, 809, 47);
+		diagnostic.add(resultat);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(104, 245, 809, 157);
+		diagnostic.add(textArea);
 		
 		// declaration autre panel 
 		
@@ -427,23 +469,6 @@ public class GUI_home {
 				copyright_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
 				copyright_2.setBounds(957, 504, 38, 32);
 				examen.add(copyright_2);
-				
-				JPanel diagnostic = new JPanel();
-				diagnostic.setBackground(new Color(102, 255, 153));
-				diagnostic.setBounds(0, 0, 1005, 546);
-				layeredPane.add(diagnostic);
-				diagnostic.setLayout(null);
-				
-				JLabel label_2 = new JLabel("");
-				label_2.setIcon(new ImageIcon(GUI_home.class.getResource("/img/icons8_copyright_32px_2.png")));
-				label_2.setBounds(957, 504, 38, 32);
-				diagnostic.add(label_2);
-				
-				JLabel lblDiagnostique_1 = new JLabel("DIAGNOSTIQUE");
-				lblDiagnostique_1.setForeground(new Color(0, 51, 51));
-				lblDiagnostique_1.setFont(new Font("Tahoma", Font.BOLD, 40));
-				lblDiagnostique_1.setBounds(363, 10, 330, 47);
-				diagnostic.add(lblDiagnostique_1);
 				
 				JPanel aide = new JPanel();
 				aide.setBackground(new Color(102, 255, 153));
