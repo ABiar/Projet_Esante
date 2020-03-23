@@ -34,6 +34,7 @@ public class Chatbot extends JFrame {
 	private static int level = 1;
 	private static Chatbot frame;
 	private static JTextArea textAreaA;
+	private static JLabel resultat;
 	
 
 	/**
@@ -43,7 +44,7 @@ public class Chatbot extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frame = new Chatbot(textAreaA);
+					frame = new Chatbot(textAreaA,resultat);
 					frame.setUndecorated(true);
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
@@ -57,7 +58,7 @@ public class Chatbot extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Chatbot(JTextArea textA) {
+	public Chatbot(JTextArea textA, JLabel resultat) {
 		textAreaA = textA;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 617, 502);
@@ -140,7 +141,7 @@ public class Chatbot extends JFrame {
 		field.setColumns(10);
 
 		JLabel image = new JLabel("");
-		image.setIcon(new ImageIcon(Chatbot.class.getResource("/img/corpsbioflash.png")));
+		image.setIcon(new ImageIcon(Chatbot.class.getResource("/img/poignet.png")));
 		image.setBounds(449, 75, 154, 361);
 		contentPane.add(image);
 
@@ -164,30 +165,26 @@ public class Chatbot extends JFrame {
 				switch (level) {
 				case 1:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Observez vous la présence d'un Oedeme de ce type ?\n");
+						txt.append("Alvi = Observez-vous la présence d'un Œdème de ce type ?\n");
 						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/douleur-poignet-200x300.jpg")));
 						level = 2;
 					} else if (reponse.toLowerCase().equals("non")) {
-						txt.append("Alvi = Mince ! Nous ne pouvons pas vous aider \n");
-						frame.dispose();
-						try {
-							GUI_home window = new GUI_home();
-							window.framebis.setVisible(true);
-						} catch (Exception exp) {
-							exp.printStackTrace();
-						}
+						txt.append("Alvi = Observez-vous la présence d'un Œdème de ce type ?\n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/douleur-poignet-200x300.jpg")));
+						level = 2;
 					}
-					else if(reponse.contentEquals("oui")==false || reponse.contentEquals("non")==false ) {
-						txt.append("Alvi = Mince ! mauvaise saisie veuillez recommencer !\n");
+					else {
+						txt.append("Alvi = Mince ! Mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n");
 					}
 					break;
 				case 2:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Observez vous la présence d'un de ces Sympthomes ? \n");
-						txt.append("Alvi =  Entrez : /1/ pour Difformité \n");
-						txt.append("Alvi =  Entrez : /2/ pour Bosse/Nodule \n");
-						txt.append("Alvi =  Entrez : /3/ pour Zone Rouge/Chaude \n");
-						txt.append("Alvi =  Entrez : 'non' pour presence d'aucun de ces Sympthomes \n");
+						txt.append("Alvi = Observez-vous la présence d'un de ces Symptômes ?\n");
+						txt.append("Alvi = Entrez : /1/ pour Difformité \n");
+						txt.append("Alvi = Entrez : /2/ pour Bosse/Nodule \n");
+						txt.append("Alvi = Entrez : /3/ pour Zone Rouge/Chaude \n");
+						txt.append("Alvi = Entrez : 'non' pour présence d'aucuns de ces Symptômes\n");
 						image1.setVisible(true);
 						image2.setVisible(true);
 						image3.setVisible(true);
@@ -197,28 +194,33 @@ public class Chatbot extends JFrame {
 						image.setVisible(false);
 						level = 3;
 					} else if (reponse.toLowerCase().equals("non")) {
-						txt.append("Alvi = Mince ! Recommencons notre test ! \n");
-						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));	
-						image.setVisible(true);
-						level = 1;
+						txt.append("Alvi = Ressentez-vous des craquements ?\n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/craque.jpg")));
+						level = 8;
+					}
+					else {
+						txt.append("Alvi = Mince ! Mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Observez-vous la présence d'un Œdème de ce type ?\n");
+						level = 2;
 					}
 					break;
 				case 3:
 					if (reponse.toLowerCase().equals("1")) {
-						txt.append("Alvi = avez vous réaliser une chuté recemment ? \n");
+						txt.append("Alvi = Avez-vous réalisé une chute récemment ?\n");
 						level = 4;
 					}
 					else if (reponse.toLowerCase().equals("2")) {
-						txt.append("Alvi = ressenter vous une sensation de chaleur ? \n");
+						txt.append("Alvi = Ressentez-vous une sensation de chaleur ?\n");
 						level = 5;
 					}
 					else if (reponse.toLowerCase().equals("3")) {
-						txt.append("Alvi = ressenter vous une certaine fatigue ? \n");
+						txt.append("Alvi = Ressentez-vous une certaine fatigue ?\n");
 						level = 7;
 					}
 					else if (reponse.toLowerCase().equals("non")) {
-						txt.append("Alvi = Mince ! Recommencons notre test ! \n");
-						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
+						txt.append("Alvi = Mince ! Recommençons notre test !\n");
+						txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/poignet.png")));
 						image1.setVisible(false);
 						image2.setVisible(false);
 						image3.setVisible(false);
@@ -226,59 +228,170 @@ public class Chatbot extends JFrame {
 						level = 1;
 					}
 					else{
-						txt.append("Alvi = Mince ! mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Mince ! Mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Observez-vous la présence d'un de ces Symptômes ?\n");
+						txt.append("Alvi = Entrez : /1/ pour Difformité \n");
+						txt.append("Alvi = Entrez : /2/ pour Bosse/Nodule \n");
+						txt.append("Alvi = Entrez : /3/ pour Zone Rouge/Chaude \n");
+						txt.append("Alvi = Entrez : 'non' pour présence d'aucuns de ces Symptômes\n");
 						level = 3;
 					}
 					break;
 				case 4:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Il s'agit certainement d'une fracture ! \n");
-						textAreaA.append("Alvi = Il s'agit certainement d'une fracture ! \n");
+						txt.append("Alvi = Il s'agit certainement d'une fracture du poignet !\n");
+						txt.append("Alvi = Je vous invite maintenant à vous rendre dans l'onglet diagnostique pour plus de détails concernant votre diagnostique !\n");
+						textAreaA.append("Suite à vos reponse :\n\n- Présence d'un œdème.\n- Présence d'une difformité au niveau du poignet.\n- Chute récente.\n\n Nous en concluons qu'il s'agit certainement d'une fracture.\n");
+						resultat.setText("Nous vous conseillons de vous rendre dans un hôpital au plus vite !");
 						image1.setVisible(false);
 						image2.setVisible(false);
 						image3.setVisible(false);
 					} else if (reponse.toLowerCase().equals("non")) {
 						txt.append("Alvi = Mince ! Recommencons notre test ! \n");
-						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));
+						txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/poignet.png")));
 						image1.setVisible(false);
 						image2.setVisible(false);
 						image3.setVisible(false);
 						image.setVisible(true);
 						level = 1;
+					}
+					else {
+						txt.append("Alvi = Mince ! mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Avez-vous réalisé une chute récemment ?\n");
+						level = 4;
 					}
 					break;
 				case 5:
 					if (reponse.toLowerCase().equals("oui")) {
 						txt.append("Alvi = Il s'agit certainement d'une tendinite ! \n");
+						txt.append("Alvi = Je vous invite maintenant à vous rendre dans l'onglet diagnostique pour plus de détails concernant votre diagnostique !\n");
+						textAreaA.append("Suite à vos réponses :\n\n- Présence d'un œdème.\n- Présence d'une Bosse/Nodule au niveau du poignet.\n- Sensation de Chaleur.\n\n Nous en concluons qu'il s'agit certainement d'une Tendinite.\n");
+						resultat.setText("Nous vous conseillons de contacter un Rhumatologue ou un medecin du sport !");
 					} else if (reponse.toLowerCase().equals("non")) {
-						txt.append("Alvi = etes vous amener a realise le meme mouvement au cours d'une journée ? (sportif ou professionelle) \n");
+						txt.append("Alvi = Êtes-vous amené à réaliser le même mouvement au cours d'une journée ? (sportif ou professionnel)\n");
 						level = 6;
+					}
+					else {
+						txt.append("Alvi = Mince ! mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Ressentez-vous une sensation de chaleur ?\n");
+						level = 5;
 					}
 					break;
 				case 6:
 					if (reponse.toLowerCase().equals("oui")) {
-						txt.append("Alvi = Il s'agit certainement d'une entorse ! \n");
+						txt.append("Alvi = Il s'agit certainement d'une entorse !\n");
+						txt.append("Alvi = Je vous invite maintenant à vous rendre dans l'onglet diagnostique pour plus de détails concernant votre diagnostique !\n");
+						textAreaA.append("Suite à vos réponses :\n\n- Présence d'un œdème.\n- Présence d'une Bosse/Nodule au niveau du poignet.\n- Pas de sensation de Chaleur.\n- Actvité répetez au cours d'un meme journée.\n\n Nous en concluons qu'il s'agit certainement d'une entorse.\n");
+						resultat.setText("Nous vous conseillons de contacter un Rhumatologue ou un medecin du sport !");
 					} else if (reponse.toLowerCase().equals("non")) {
-						txt.append("Alvi = Mince ! Recommencons notre test ! \n");
-						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/corpsbioflash.png")));	
+						txt.append("Alvi = Mince ! Recommencons notre test !\n");
+						txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/poignet.png")));
+						image1.setVisible(false);
+						image2.setVisible(false);
+						image3.setVisible(false);
 						image.setVisible(true);
 						level = 1;
+					}
+					else {
+						txt.append("Alvi = Mince ! mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Êtes-vous amené à réaliser le même mouvement au cours d'une journée ? (sportif ou professionnel)\n");
+						level = 6;
 					}
 					break;
 				case 7:
 					if (reponse.toLowerCase().equals("oui")) {
 						txt.append("Alvi = Il s'agit certainement d'une polyarthrite ! \n");
+						txt.append("Alvi = Je vous invite maintenant à vous rendre dans l'onglet diagnostique pour plus de détails concernant votre diagnostique !\n");
+						textAreaA.append("Suite à vos réponses :\n\n- Présence d'un œdème.\n\\n- Présence d'une Zone Rouge/Chaude au niveau du poignet.\n- Présence d'une certaine Fatigue.\n\n Nous en concluons qu'il s'agit certainement d'une polyarthrite.\n");
+						resultat.setText("Nous vous conseillons de contacter un Rhumatologue !");
 					} else if (reponse.toLowerCase().equals("non")) {
 						txt.append("Alvi = Il s'agit certainement d'une tendinite ! \n");
+						txt.append("Alvi = Je vous invite maintenant à vous rendre dans l'onglet diagnostique pour plus de détails concernant votre diagnostique !\n");
+						textAreaA.append("Suite à vos réponses :\n\n- Présence d'un œdème.\n- Présence d'une Bosse/Nodule au niveau du poignet.\n- Sensation de Chaleur.\n\n Nous en concluons qu'il s'agit certainement d'une Tendinite.\n");
+						resultat.setText("Nous vous conseillons de contacter un Rhumatologue ou un medecin du sport !");
+					}
+					else {
+						txt.append("Alvi = Mince ! mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Ressentez-vous une certaine fatigue ?\n");
 					}
 					break;
 				case 8:
+					if (reponse.toLowerCase().equals("oui")) {
+						txt.append("Alvi = Votre âge est-il supérieur à 50 ans ?\n");
+						level = 9;
+					} else if (reponse.toLowerCase().equals("non")) {
+						txt.append("Alvi = Avez-vous du mal à saisir des objets ?\n");
+						level = 11;
+					}
+					else {
+						txt.append("Alvi = Mince ! Mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Ressentez-vous des craquements ?\n");
+						level = 8;
+					}
 					break;
 				case 9:
+					if (reponse.toLowerCase().equals("oui")) {
+						txt.append("Alvi = Il s'agit certainement d'arthrose ! \n");
+						txt.append("Alvi = Je vous invite maintenant à vous rendre dans l'onglet diagnostique pour plus de détails concernant votre diagnostique !\n");
+						textAreaA.append("Suite à vos réponses :\n\n- Présence de craquement.\n- Age superieur a 50 ans .\n\n Nous en concluons qu'il s'agit certainement d'arthrose.\n");
+						resultat.setText("Nous vous conseillons de contacter votre medecin géneraliste ou un Rhumatologue !");
+						
+					} else if (reponse.toLowerCase().equals("non")) {
+						txt.append("Alvi = Avez-vous déjà eu des problèmes de poids ?\n");
+						level = 10;
+					}
+					else {
+						txt.append("Alvi = Mince ! Mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Votre âge est-il supérieur à 50 ans ?\n");
+						level = 9;
+					}
 					break;
 				case 10:
+					if (reponse.toLowerCase().equals("oui")) {
+						txt.append("Alvi = Il s'agit certainement d'arthrose ! \n");
+						txt.append("Alvi = Je vous invite maintenant à vous rendre dans l'onglet diagnostique pour plus de détails concernant votre diagnostique !\n");
+						textAreaA.append("Suite à vos réponses :\n\n- Présence de craquement.\n- Problème de poids.\n\n Nous en concluons qu'il s'agit certainement d'arthrose.\n");
+						resultat.setText("Nous vous conseillons de contacter votre medecin géneraliste ou un Rhumatologue !");
+						
+					} else if (reponse.toLowerCase().equals("non")) {
+						txt.append("Alvi = Mince ! Recommençons notre test !\n");
+						txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/poignet.png")));
+						image1.setVisible(false);
+						image2.setVisible(false);
+						image3.setVisible(false);
+						image.setVisible(true);
+						level = 1;
+					}
+					else {
+						txt.append("Alvi = Mince ! Mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Avez-vous déjà eu des problèmes de poids ?\n");
+						level = 10;
+					}
 					break;
 				case 11:
+					if (reponse.toLowerCase().equals("oui")) {
+						txt.append("Alvi = il s'agit certainement du Syndrome du canal carpien !\n");
+						txt.append("Alvi = Je vous invite maintenant à vous rendre dans l'onglet diagnostique pour plus de détails concernant votre diagnostique !\n");
+						textAreaA.append("Suite à vos réponses :\n\n- Saisie des objets difficile.\n\n Nous en concluons qu'il s'agit certainement du Syndrome du canal carpien.\n");
+						resultat.setText("Nous vous conseillons de contacter votre médecin généraliste ou un Rhumatologue !");
+					} else if (reponse.toLowerCase().equals("non")) {
+						txt.append("Alvi = Mince ! Recommençons notre test !\n");
+						txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n");
+						image.setIcon(new ImageIcon(GUI_home.class.getResource("/img/poignet.png")));
+						image1.setVisible(false);
+						image2.setVisible(false);
+						image3.setVisible(false);
+						image.setVisible(true);
+						level = 1;
+					}
+					else {
+						txt.append("Alvi = Mince ! Mauvaise saisie veuillez recommencer !\n");
+						txt.append("Alvi = Avez-vous du mal à saisir des objets ?\n");
+						level = 11;
+					}
 					break;
 				case 12:
 					break;

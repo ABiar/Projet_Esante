@@ -18,6 +18,7 @@ import javax.swing.JLayeredPane;
 import java.awt.Toolkit;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
+import javax.swing.UIManager;
 
 
 
@@ -25,6 +26,7 @@ public class GUI_home {
 
 	public JFrame framebis;
 	public JTextArea textArea;
+	public JLabel resultat;
 	
 	int xx,xy;
 	/**
@@ -200,10 +202,6 @@ public class GUI_home {
 		aidebutton.setBounds(42, 515, 136, 44);
 		barre_Menu.add(aidebutton);
 		
-		
-		
-		
-		
 		///
 		// declaration des différents panels. Indentation pour préciser quels label est dans quel panel
 		///
@@ -241,7 +239,7 @@ public class GUI_home {
 			lblNewLabel.setBounds(356, 226, 114, 95);
 			accueil.add(lblNewLabel);
 			
-			JLabel lblRaliserLe = new JLabel("R\u00E9aliser le 12/12/2019");
+			JLabel lblRaliserLe = new JLabel("R\u00E9aliser le 25/03/2020");
 			lblRaliserLe.setForeground(new Color(0, 128, 128));
 			lblRaliserLe.setFont(new Font("Tahoma", Font.BOLD, 30));
 			lblRaliserLe.setBounds(488, 248, 364, 47);
@@ -469,19 +467,23 @@ public class GUI_home {
 					JLabel lblVotreDernierExamen = new JLabel("Votre dernier examen en date :");
 					lblVotreDernierExamen.setForeground(SystemColor.textHighlight);
 					lblVotreDernierExamen.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 30));
-					lblVotreDernierExamen.setBounds(24, 160, 578, 47);
+					lblVotreDernierExamen.setBounds(26, 143, 578, 47);
 					diagnostic.add(lblVotreDernierExamen);
 					
 					
-					JLabel resultat = new JLabel("");
-					resultat.setFont(new Font("Tahoma", Font.PLAIN, 30));
-					resultat.setBounds(104, 416, 809, 47);
-					diagnostic.add(resultat);
+					JLabel resultat_1 = new JLabel("");
+					resultat_1.setHorizontalAlignment(SwingConstants.CENTER);
+					resultat_1.setForeground(new Color(220, 20, 60));
+					resultat_1.setFont(new Font("Tahoma", Font.PLAIN, 22));
+					resultat_1.setBounds(55, 455, 906, 47);
+					diagnostic.add(resultat_1);
 					
 					JTextArea textArea_1 = new JTextArea();
-					textArea_1.setFont(new Font("Century", Font.PLAIN, 16));
-					textArea_1.setBackground(new Color(102, 255, 153));
-					textArea_1.setBounds(24, 245, 971, 157);
+					textArea_1.setEditable(false);
+					textArea_1.setForeground(new Color(0, 0, 128));
+					textArea_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+					textArea_1.setBackground(Color.WHITE);
+					textArea_1.setBounds(55, 212, 906, 233);
 					diagnostic.add(textArea_1);
 				
 					
@@ -531,7 +533,7 @@ public class GUI_home {
 				//Bouton pour démarrer l'examen. Ouvre la fenêtre du chatbot
 						btnDemarrerExamen.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent e) {
-								Chatbot frame = new Chatbot(textArea_1);
+								Chatbot frame = new Chatbot(textArea_1,resultat_1);
 								frame.setUndecorated(true);
 								frame.setVisible(true);
 								frame.setLocationRelativeTo(null);
@@ -581,6 +583,14 @@ public class GUI_home {
 		
 		/// Envoie vers diagnostique
 		diagnostiquebutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				layeredPane.removeAll();
+				layeredPane.add(diagnostic);
+				layeredPane.repaint();
+				layeredPane.revalidate();
+			}
+		});
+		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				layeredPane.removeAll();
 				layeredPane.add(diagnostic);
