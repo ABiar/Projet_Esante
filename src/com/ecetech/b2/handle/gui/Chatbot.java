@@ -146,6 +146,7 @@ public class Chatbot extends JFrame {
 		contentPane.add(image);
 
 		JTextArea txt = new JTextArea();
+		txt.setEditable(false);
 		txt.setBounds(10, 0, 411, 210);
 		contentPane.add(txt);
 		txt.append("Alvi= Pouvez vous réaliser ce mouvement ?\n");
